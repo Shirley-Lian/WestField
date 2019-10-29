@@ -7,6 +7,8 @@
 # 项目名称  : aspschedule
 from flask import Blueprint
 
+from WestffsSchedules.models import LoginInfo
+
 order = Blueprint('order', __name__)
 
 

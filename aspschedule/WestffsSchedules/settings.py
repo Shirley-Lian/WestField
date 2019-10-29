@@ -7,6 +7,7 @@
 # 项目名称  : aspschedule
 
 import os
+from datetime import date, timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -34,12 +35,38 @@ class Config:
 
     SESSION_TYPE = 'redis'
 
-    PERMANENT_SESSION_LIFETIME = 14
+    PERMANENT_SESSION_LIFETIME = 140
+
+    SCHEDULER_API_ENABLED = True
+
+    # 任务列表
+    SCHEDULER_JOBS = [
+        {  # 第一个任务
+            'id': 'job1',
+            'func': 'WestffsSchedules.tasks:get_login_his',
+            # 'func': 'WestffsSchedules.tasks:get_login_his',
+
+            'args': (date.today()-timedelta(days=1), date.today()-timedelta(days=1)),
+            'trigger': {
+                'type': 'cron',  # 类型
+                'day_of_week': "0-6",  # 可定义具体哪几天要执行
+                'hour': '1',  # 小时数
+                'minute': '0'
+            }
+        },
+        # {  # 第二个任务，每隔5S执行一次
+        #     'id': 'method_test',
+        #     'func': 'WestffsSchedules.tasks:method_test',  # 方法名
+        #     'args': (1, 2, 'job2'),  # 入参
+        #     'trigger': 'interval',  # interval表示循环任务
+        #     'seconds': 5,
+        # }
+    ]
 
 
 class DevelopConfig(Config):
 
-    DEBUG = True
+    # DEBUG = True
     dbinfo = {
         'ENGINE': 'mysql',
         'DRIVER': 'pymysql',
@@ -47,7 +74,7 @@ class DevelopConfig(Config):
         'PASSWORD': 'password',
         'HOST': '62.234.1.36',
         'PORT': '3306',
-        'DBNAME': 'flask',
+        'DBNAME': 'flask03',
     }
 
     SQLALCHEMY_DATABASE_URI = get_db_uri(dbinfo)
@@ -63,7 +90,7 @@ class TestConfig(Config):
         'PASSWORD': 'password',
         'HOST': '62.234.1.36',
         'PORT': '3306',
-        'DBNAME': 'flask',
+        'DBNAME': 'flask02',
     }
 
     SQLALCHEMY_DATABASE_URI = get_db_uri(dbinfo)
@@ -78,7 +105,7 @@ class ProductConfig(Config):
         'PASSWORD': 'password',
         'HOST': '62.234.1.36',
         'PORT': '3306',
-        'DBNAME': 'flask',
+        'DBNAME': 'flask03',
     }
 
     SQLALCHEMY_DATABASE_URI = get_db_uri(dbinfo)
@@ -93,7 +120,7 @@ class StagingConfig(Config):
         'PASSWORD': 'password',
         'HOST': '62.234.1.36',
         'PORT': '3306',
-        'DBNAME': 'flask',
+        'DBNAME': 'flask02',
     }
 
     SQLALCHEMY_DATABASE_URI = get_db_uri(dbinfo)

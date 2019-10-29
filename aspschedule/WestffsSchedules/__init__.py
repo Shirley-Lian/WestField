@@ -6,6 +6,7 @@
 # 开发工具  : PyCharm
 # 项目名称  : aspschedule
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 from WestffsSchedules.ext import init_ext
 from WestffsSchedules.settings import envs
