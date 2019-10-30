@@ -44,25 +44,21 @@ class Config:
         {  # 第一个任务
             'id': 'job1',
             'func': 'WestffsSchedules.tasks:get_login_his',
-            # 'func': 'WestffsSchedules.tasks:get_login_his',
-
             'args': (date.today()-timedelta(days=1), date.today()-timedelta(days=1)),
-            'trigger': 'interval',  # interval表示循环任务
-            'seconds': 5,
-            # 'trigger': {
-            #     'type': 'cron',  # 类型
-            #     'day_of_week': "0-6",  # 可定义具体哪几天要执行
-            #     'hour': '1',  # 小时数
-            #     'minute': '0'
-            # }
+            'trigger': {
+                'type': 'cron',  # 类型
+                'day_of_week': "0-6",  # 可定义具体哪几天要执行
+                'hour': '1',  # 小时数
+                'minute': '0'
+            }
         },
-        {  # 第二个任务，每隔5S执行一次
-            'id': 'method_test',
-            'func': 'WestffsSchedules.tasks:method_test',  # 方法名
-            'args': (1, 2, 'job2'),  # 入参
-            'trigger': 'interval',  # interval表示循环任务
-            'seconds': 5,
-        }
+        # {  # 第二个任务，每隔5S执行一次
+        #     'id': 'method_test',
+        #     'func': 'WestffsSchedules.tasks:method_test',  # 方法名
+        #     'args': (1, 2, 'job2'),  # 入参
+        #     'trigger': 'interval',  # interval表示循环任务
+        #     'seconds': 5,
+        # }
     ]
 
 
