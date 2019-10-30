@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8fd3d39-5a8e-4c04-a7d5-0e30b54c63c4" name="Default Changelist" comment="" />
+    <list default="true" id="b8fd3d39-5a8e-4c04-a7d5-0e30b54c63c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/settings.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1239">
-              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="1365">
+              <caret line="65" selection-start-line="65" selection-end-line="65" />
               <folding>
                 <element signature="e#146#161#0" expanded="true" />
               </folding>
@@ -36,16 +39,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/requirment.txt">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirement.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/utils/city_cut.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-441">
-              <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            <state relative-caret-position="189">
+              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -53,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/engine/base.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-712">
+            <state relative-caret-position="20601">
               <caret line="994" column="8" selection-start-line="994" selection-start-column="8" selection-end-line="994" selection-end-column="8" />
             </state>
           </provider>
@@ -62,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/crud.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
+            <state relative-caret-position="14973">
               <caret line="718" selection-start-line="718" selection-end-line="718" />
             </state>
           </provider>
@@ -71,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/dml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
+            <state relative-caret-position="10164">
               <caret line="487" column="14" selection-start-line="487" selection-start-column="8" selection-end-line="487" selection-end-column="14" />
               <folding>
                 <element signature="e#230#303#1" />
@@ -84,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/selectable.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
+            <state relative-caret-position="2835">
               <caret line="174" column="26" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="26" />
             </state>
           </provider>
@@ -93,7 +100,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/elements.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
+            <state relative-caret-position="399">
               <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
             </state>
           </provider>
@@ -102,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
+            <state relative-caret-position="609">
               <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding>
                 <element signature="e#146#161#0" expanded="true" />
@@ -111,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+            <state relative-caret-position="168">
+              <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
               <folding>
                 <element signature="e#151#160#0" expanded="true" />
               </folding>
@@ -174,6 +181,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,7 +210,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,12 +296,13 @@
       <updated>1570691590328</updated>
       <workItem from="1570691598245" duration="8350000" />
       <workItem from="1571016888567" duration="1000" />
-      <workItem from="1572319829555" duration="19326000" />
+      <workItem from="1572319829555" duration="20427000" />
+      <workItem from="1572397237179" duration="27000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27677000" />
+    <option name="totallyTimeSpent" value="28805000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -309,7 +317,7 @@
     <frame x="69" y="52" width="1708" height="962" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.12944162" visible="true" weight="0.18689321" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.12944162" visible="true" weight="0.18932039" />
       <window_info id="Structure" order="1" sideWeight="0.8708861" side_tool="true" weight="0.18689321" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -527,23 +535,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/elements.py">
+    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/schema.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        <state relative-caret-position="257">
+          <caret line="4378" column="14" lean-forward="true" selection-start-line="4378" selection-start-column="14" selection-end-line="4378" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/selectable.py">
+    <entry file="file://$PROJECT_DIR$/requirment.txt" />
+    <entry file="file://$PROJECT_DIR$/WestffsSchedules/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="174" column="26" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="26" />
+        <state relative-caret-position="1365">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+          <folding>
+            <element signature="e#146#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WestffsSchedules/utils/city_cut.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/engine/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20601">
+          <caret line="994" column="8" selection-start-line="994" selection-start-column="8" selection-end-line="994" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/crud.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14973">
+          <caret line="718" selection-start-line="718" selection-end-line="718" />
         </state>
       </provider>
     </entry>
     <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/dml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
+        <state relative-caret-position="10164">
           <caret line="487" column="14" selection-start-line="487" selection-start-column="8" selection-end-line="487" selection-end-column="14" />
           <folding>
             <element signature="e#230#303#1" />
@@ -552,23 +585,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/crud.py">
+    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/selectable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="718" selection-start-line="718" selection-end-line="718" />
+        <state relative-caret-position="2835">
+          <caret line="174" column="26" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/schema.py">
+    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/elements.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="4378" column="14" lean-forward="true" selection-start-line="4378" selection-start-column="14" selection-end-line="4378" selection-end-column="14" />
+        <state relative-caret-position="399">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
+        <state relative-caret-position="609">
           <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding>
             <element signature="e#146#161#0" expanded="true" />
@@ -576,42 +609,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/engine/base.py">
+    <entry file="file://$PROJECT_DIR$/requirement.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-712">
-          <caret line="994" column="8" selection-start-line="994" selection-start-column="8" selection-end-line="994" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WestffsSchedules/utils/city_cut.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-441">
-          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        <state relative-caret-position="446">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="52" column="35" lean-forward="true" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        <state relative-caret-position="168">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
           <folding>
             <element signature="e#151#160#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WestffsSchedules/tasks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1239">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#146#161#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirment.txt">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
