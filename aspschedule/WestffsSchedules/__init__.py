@@ -22,5 +22,6 @@ def create_app(env):
     init_view(app=app)
 
     init_ext(app=app)
+    # init_mail(app=app)
 
     return app

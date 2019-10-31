@@ -37,12 +37,33 @@ class Config:
 
     PERMANENT_SESSION_LIFETIME = 140
 
+    # 配置邮箱
+    MAIL_SERVER = "smtp.163.com"
+
+    MAIL_PORT = 465
+
+    MAIL_USERNAME = "lianxiaorui0511@163.com"
+
+    MAIL_PASSWORD = "QuantFintech2019"
+
+    MAIL_DEFAULT_SENDER = MAIL_USERNAME
+
+    # 配置定时器
     SCHEDULER_API_ENABLED = True
+
+    SCHEDULER_EXECUTORS = {
+        'default': {'type': 'threadpool', 'max_workers': 20}
+    }
+
+    SCHEDULER_JOB_DEFAULTS = {
+        'coalesce': False,
+        'max_instances': 3
+    }
 
     # 任务列表
     SCHEDULER_JOBS = [
         {  # 第一个任务
-            'id': 'job1',
+            'id': 'GetLoginInfoLog',
             'func': 'WestffsSchedules.tasks:get_login_his',
             'args': (date.today()-timedelta(days=1), date.today()-timedelta(days=1)),
             'trigger': {
@@ -50,6 +71,16 @@ class Config:
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
                 'hour': '1',  # 小时数
                 'minute': '0'
+            }
+        },
+        {  # 第二个任务
+            'id': 'job2',
+            'func': 'WestffsSchedules.tasks:get_login_last',
+            'trigger': {
+                'type': 'cron',  # 类型
+                'day_of_week': "0-6",  # 可定义具体哪几天要执行
+                'hour': '*',  # 小时数
+                'minute': '*/10',
             }
         },
         # {  # 第二个任务，每隔5S执行一次

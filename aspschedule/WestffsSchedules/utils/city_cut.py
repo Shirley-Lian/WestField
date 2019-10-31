@@ -95,7 +95,24 @@ def city_cut(citys):
             if '红河' in i:
                 index = seg_list.index(i)
                 seg_list[index] = '红河哈尼族彝族自治州'
+
     return seg_list
+
+
+def get_city(citys):
+    if citys is not None:
+        words_list = city_cut(citys)
+        if len(words_list) == 1:
+            province = words_list[0]
+            city_detail = ''
+        else:
+            province = words_list[0]
+            city_detail = words_list[1]
+    else:
+        province = ''
+        city_detail = ''
+
+    return province, city_detail
 
 
 def user_city_cut(citys):

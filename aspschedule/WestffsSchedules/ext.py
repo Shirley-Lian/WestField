@@ -5,10 +5,12 @@
 # 文件名称  : ext.py
 # 开发工具  : PyCharm
 # 项目名称  : aspschedule
+from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
 from flask_apscheduler import APScheduler
 
 db = SQLAlchemy()
+mail = Mail()
 
 scheduler = APScheduler()
 
@@ -17,6 +19,8 @@ def init_ext(app):
     # 加上下面的代码，定时任务才可以执行
     db.app = app
     db.init_app(app=app)
+
+    mail.init_app(app=app)
 
     scheduler.init_app(app=app)
     scheduler.start()

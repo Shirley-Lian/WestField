@@ -1,3 +1,4 @@
+from flask import current_app
 from flask_migrate import MigrateCommand, Migrate
 from flask_script import Manager
 import os

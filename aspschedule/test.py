@@ -5,40 +5,60 @@
 # 文件名称  : test.py
 # 开发工具  : PyCharm
 # 项目名称  : aspschedule
-import requests
+import unittest
+from manage import app
 
-from WestffsSchedules.ext import db
-from WestffsSchedules.models import LoginInfo
+class LoginTest(unittest.TestCase):
+    """构造单元测试案例"""
+    def test_empty_user_pwd(self):
+        # 创建进行web请求的客户端
+        client = app.test_client()
 
 
-def get_login_his(startTime, endTime):
-    page = 1
-    payload = {'orderBy': '-id', 'startTime': startTime, 'endTime': endTime}
-    city = []
-    while True:
-        url_login_info = r"http://47.75.133.250/api/Values/GetLoginInfoLog/10/%d" % page
-        # logger.info("login_info url地址：%s" % url_login_info)
-        page = page + 1
-        html_json = requests.get(url_login_info, params=payload, timeout=(50, 100)).json()
-        # html_json = requests.get(url_login_info, timeout=(5, 10)).json()
-        print(html_json)
-        lines = html_json.get('rows')
-        if len(lines) == 0:
-            break
-        # param = []
+if __name__ == "__main__":
+    unittest.main()
 
-        db.session.execute(
-            LoginInfo.__table__.insert(),
-            lines
-        )
-        db.session.commit()
-        # for index in lines:
-        #     print(index)
-        #     city.append(index.get("City"))
-        #     para = "(%s, %d, '%s', '%s', '%s', '%s', '%s', %d)" % (index.get('Id'), index.get('Account'), index.get('Ip'),
-        #                                                            index.get('Address'), index.get('City'),
-        #                                                            index.get('LoginTime'), index.get('LeaveTime'),
-        #                                                            index.get('OnlineMinute'))
-        #     param.append(para)
+    # inserter = db.insert(table='login_info_his').prefix_with("OR REPLACE")
 
-get_login_his('2019-10-28',"2019-10-28")
+    # for item in lines:
+    #     info = {}
+    #     info["Id"] = item.get('Id')
+    #     info["Account"] = item.get('Account')
+    #     info["Ip"] = item.get('Ip')
+    #     info["Address"] = item.get('Address')
+    #     info["City"] = item.get('City')
+    #     info["LoginTime"] = item.get('LoginTime').replace('T', ' ')
+    #     info["LeaveTime"] = item.get('LeaveTime').replace('T', ' ')
+    #     info["OnlineMinute"] = item.get('OnlineMinute')
+    #     city_list = city_cut(info.get("City"))
+    #     if len(city_list) == 1:
+    #         info["province"] = city_list[0]
+    #     else:
+    #         info["province"] = city_list[0]
+    #         info["city_name"] = city_list[1]
+    #     infos.append(info)
+    # for item in lines:
+    #     info = LoginInfo()
+    #     info.Id = item.get('Id')
+    #     info.Account = item.get('Account')
+    #     info.Ip = item.get('Ip')
+    #     info.Address = item.get('Address')
+    #     info.City = item.get('City')
+    #     info.LoginTime = item.get('LoginTime').replace('T', ' ')
+    #     info.LeaveTime = item.get('LeaveTime').replace('T', ' ')
+    #     info.OnlineMinute = item.get('OnlineMinute')
+    #     city_list = city_cut(info.City)
+    #     if len(city_list) == 1:
+    #         info.province = city_list[0]
+    #     else:
+    #         info.province = city_list[0]
+    #         info.city_name = city_list[1]
+    #     infos.append(info)
+    #
+    # db.session.add_all(infos).values("REPLACE")
+    # db.session.commit()
+    # db.session.execute(
+    #     LoginInfo.__table__.insert().values("REPLACE"),
+    #     infos
+    # )
+    # db.session.commit()
