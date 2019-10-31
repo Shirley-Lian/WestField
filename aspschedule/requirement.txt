@@ -23,6 +23,8 @@ Jinja2==2.10.3
 Mako==1.1.0
 manage==0.1.13
 MarkupSafe==1.1.1
+numpy==1.17.3
+pandas==0.25.2
 PyMySQL==0.9.3
 python-dateutil==2.8.0
 python-editor==1.0.4
