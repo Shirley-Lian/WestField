@@ -11,7 +11,7 @@ import pandas as pd
 import requests
 
 from WestffsSchedules.ext import db, scheduler
-from WestffsSchedules.models import LoginInfo, Mt4List, UserInfo
+from WestffsSchedules.models import LoginInfo, Mt4List, UserInfo, WarningLoginInfo
 
 from WestffsSchedules.utils.city_cut import get_city
 from WestffsSchedules.utils.mails import PySendMail
@@ -49,7 +49,7 @@ def get_login_his(startTime, endTime):
         lines = url_request_resp(api, items, page, payload)
         page = page + 1
         if len(lines) == 0:
-            return
+            break
 
         param = []
         for index in lines:
@@ -72,10 +72,12 @@ def get_login_his(startTime, endTime):
         db.session.execute(SQL)
         db.session.commit()
 
+    return True
 
-def get_login_last():
+
+def get_login_last(startData, endDate):
     page = 1
-    payload ={}
+    payload = {'startData': startData, 'endDate': endDate}
     api = 'GetLoginInfo'
     items = 100
     userids = []
@@ -92,6 +94,8 @@ def get_login_last():
         '登陆地址': log_address,
         '最后一次登陆时间': log_time,
     }
+    title = u"注册地址与登陆地址不相符"
+    warn_type = u"异地登陆预警"
     while True:
         lines = url_request_resp(api, items, page, payload)
         if len(lines) == 0:
@@ -105,11 +109,16 @@ def get_login_last():
 
             province = words_list[0]
             city_detail = words_list[1]
-
+            # 查找异地登陆账号  当日登陆  非测试用户 且一天只发送一次
             if index.get('LoginTime')[:10] == datetime.date.today().strftime('%Y-%m-%d'):
 
                 account = index.get('Account')
+                warning_account = WarningLoginInfo.query.filter_by(account=account).first()
 
+                if warning_account is not None:
+
+                    print(warning_account)
+                    continue
                 mt4list = Mt4List.query.filter_by(account=account).first()
 
                 if mt4list and mt4list.group_name not in ['W-SystemTest', 'W-Test']:
@@ -141,18 +150,35 @@ def get_login_last():
         db.session.execute(SQL)
         db.session.commit()
 
-    frame = pd.DataFrame(data)
-    df_html = frame.to_html(escape=False)
-    # print(df_html)
-    title = u"注册地址与登陆地址不相符"
-    warn_type = u"异地登陆预警"
-    # mailadd = "zhangh0725@gmail.com"
-    mailadd = "lianxiaorui0511@163.com"
-    # mailadd = "dofuy007@gmail.com"
-    sendmail = PySendMail()
-    ret = sendmail.mail(df_html, mailadd, warn_type, title)
-    if ret:
-        print("邮件发送成功")
-    else:
-        print("邮件发送失败")
+    if len(accounts) != 0:
+        frame = pd.DataFrame(data)
+        df_html = frame.to_html(escape=False)
 
+        mailadd = "lianxiaorui0511@163.com"
+        # mailadd = "dofuy007@gmail.com"
+        sendmail = PySendMail()
+        ret = sendmail.mail(df_html, mailadd, warn_type, title)
+        if ret:
+            print("邮件发送成功")
+        else:
+            print("邮件发送失败")
+
+        for i in range(len(accounts)):
+            print(i)
+            warning_info = WarningLoginInfo()
+            warning_info.account = accounts[i-1]
+            print(accounts[i-1])
+            warning_info.city = address[i-1]
+            print(address[i-1])
+
+            warning_info.save()
+
+    return ''
+
+
+def clear_warning_form():
+
+    db.session.execute("delete from warning_login_info")
+    db.session.commit()
+
+    return 'delete'

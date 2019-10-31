@@ -6,6 +6,10 @@
 # 开发工具  : PyCharm
 # 项目名称  : aspschedule
 import unittest
+
+import requests
+import datetime
+
 from manage import app
 
 class LoginTest(unittest.TestCase):
@@ -16,7 +20,18 @@ class LoginTest(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main()
+    # unittest.main()
+    page = 1
+    startData = endDate = '2019-10-31' #datetime.date.today()
+    payload = {'startData': startData, 'endDate': endDate}
+    api = 'GetLoginInfo'
+    items = 100
+    url = r"http://47.75.133.250/api/Values/%s/%d/%d" % (api, items, page)
+    print(url)
+    # logger.info("login_info url地址：%s" % url_login_info)
+    resp = requests.get(url, params=payload, timeout=(50, 100)).json()
+    # html_json = requests.get(url_login_info, timeout=(5, 10)).json()
+    print(resp)
 
     # inserter = db.insert(table='login_info_his').prefix_with("OR REPLACE")
 

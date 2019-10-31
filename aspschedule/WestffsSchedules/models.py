@@ -109,3 +109,11 @@ class UserInfo(BaseModel):
     is_office = db.Column(db.Integer, nullable=False, name='is_office')
     province = db.Column(db.String(64), nullable=False)
     city = db.Column(db.String(64), nullable=False)
+
+
+class WarningLoginInfo(BaseModel):
+
+    __tablename__ = 'warning_login_info'
+
+    account = db.Column(db.Integer, primary_key=True, autoincrement=False, name='account')
+    city = db.Column(db.String(128), nullable=False, name='city')

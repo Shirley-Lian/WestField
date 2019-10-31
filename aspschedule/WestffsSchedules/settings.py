@@ -69,18 +69,29 @@ class Config:
             'trigger': {
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
-                'hour': '1',  # 小时数
-                'minute': '0'
+                'hour': '01',  # 小时数
+                'minute': '10',
             }
         },
         {  # 第二个任务
             'id': 'job2',
             'func': 'WestffsSchedules.tasks:get_login_last',
+            'args': (date.today(), date.today()),
             'trigger': {
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
                 'hour': '*',  # 小时数
-                'minute': '*/10',
+                'minute': '0',
+            }
+        },
+        {  # 第三个任务
+            'id': 'job3',
+            'func': 'WestffsSchedules.tasks:clear_warning_form',
+            'trigger': {
+                'type': 'cron',  # 类型
+                'day_of_week': "0-6",  # 可定义具体哪几天要执行
+                'hour': '00',  # 小时数
+                'minute': '01',
             }
         },
         # {  # 第二个任务，每隔5S执行一次
