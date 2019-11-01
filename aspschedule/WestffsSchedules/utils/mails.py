@@ -175,12 +175,14 @@ class PySendMail:
         # try:
         msg = MIMEText(html_msg, 'html', 'utf-8')
         msg['From'] = formataddr(["QuantFintech", self.my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
-        msg['To'] = formataddr(["Harry", my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
+        # msg['To'] = formataddr(["Harry", my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
+        msg['To'] = ','.join(my_user)
+        # msg['To'] = ','.join(formataddr(["Harry", my_user]))
         msg['Subject'] = "【westfield】" + warning_type # 邮件的主题，也可以说是标题
 
         server = smtplib.SMTP_SSL(self.server_smtp, self.server_port)  # 发件人邮箱中的SMTP服务器，端口是465
         server.login(self.my_sender, self.my_pass)  # 括号中对应的是发件人邮箱账号、邮箱密码
-        server.sendmail(self.my_sender, [my_user, ], msg.as_string().encode('utf-8'))  # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
+        server.sendmail(self.my_sender, msg['To'].split(','), msg.as_string().encode('utf-8'))  # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
         server.quit()  # 关闭连接
         # except Exception as e:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
         #     ret = False

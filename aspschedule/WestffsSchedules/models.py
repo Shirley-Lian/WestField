@@ -56,6 +56,7 @@ class LoginInfo(BaseModel):
 class TestModel(BaseModel):
 
     __tablename__ = 'test'
+
     id = db.Column(db.Integer, primary_key=True, autoincrement=False)
     name = db.Column(db.String(64))
 

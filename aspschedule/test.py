@@ -21,17 +21,22 @@ class LoginTest(unittest.TestCase):
 
 if __name__ == "__main__":
     # unittest.main()
-    page = 1
-    startData = endDate = '2019-10-31' #datetime.date.today()
-    payload = {'startData': startData, 'endDate': endDate}
-    api = 'GetLoginInfo'
-    items = 100
-    url = r"http://47.75.133.250/api/Values/%s/%d/%d" % (api, items, page)
-    print(url)
-    # logger.info("login_info url地址：%s" % url_login_info)
-    resp = requests.get(url, params=payload, timeout=(50, 100)).json()
-    # html_json = requests.get(url_login_info, timeout=(5, 10)).json()
-    print(resp)
+    d = '2019-03-29T16:17:56.123'
+    print(d[11:13])
+    x = datetime.datetime.strptime(d[:19], '%Y-%m-%dT%H:%M:%S').timestamp()
+    print(x)
+
+    # page = 1
+    # startData = endDate = '2019-10-31' #datetime.date.today()
+    # payload = {'startData': startData, 'endDate': endDate}
+    # api = 'GetLoginInfo'
+    # items = 100
+    # url = r"http://47.75.133.250/api/Values/%s/%d/%d" % (api, items, page)
+    # print(url)
+    # # logger.info("login_info url地址：%s" % url_login_info)
+    # resp = requests.get(url, params=payload, timeout=(50, 100)).json()
+    # # html_json = requests.get(url_login_info, timeout=(5, 10)).json()
+    # print(resp)
 
     # inserter = db.insert(table='login_info_his').prefix_with("OR REPLACE")
 

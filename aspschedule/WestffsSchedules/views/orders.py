@@ -35,9 +35,11 @@ def send_email(df):
 
 @order.route('/test/')
 def test():
-    test = TestModel.query.all()
+    test = TestModel.query.with_entities(TestModel.name).all()
+    # test = TestModel.query.all()
     print(test)
     print('1111')
+    print(type(test))
     for item in test:
         print(item)
         print(item.name)

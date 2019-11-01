@@ -27,7 +27,7 @@ def method_test(a, b, c):
 
 def url_request_resp(api, items, page, data):
     url = r"http://47.75.133.250/api/Values/%s/%d/%d" % (api, items, page)
-    print(url)
+    # print(url)
     # logger.info("login_info url地址：%s" % url_login_info)
     resp = requests.get(url, params=data, timeout=(50, 100)).json()
     # html_json = requests.get(url_login_info, timeout=(5, 10)).json()
@@ -45,6 +45,7 @@ def get_login_his(startTime, endTime):
     payload = {'orderBy': '-id', 'startTime': startTime, 'endTime': endTime}
     api = 'GetLoginInfoLog'
     items = 100
+    print(api)
 
     while True:
         lines = url_request_resp(api, items, page, payload)
@@ -77,6 +78,7 @@ def get_login_his(startTime, endTime):
 
 
 def get_login_last(startData, endDate):
+    ref_time = (datetime.datetime.now()-datetime.timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%S')
     page = 1
     payload = {'startData': startData, 'endDate': endDate}
     api = 'GetLoginInfo'
@@ -97,6 +99,15 @@ def get_login_last(startData, endDate):
     }
     title = u"注册地址与登陆地址不相符"
     warn_type = u"异地登陆预警"
+
+    warned_accounts = []
+
+    warn_accs = WarningLoginInfo.query.with_entities(WarningLoginInfo.account).all()
+
+    if len(warn_accs) !=0:
+        for item in warn_accs:
+            warned_accounts.append(item.account)
+
     while True:
         lines = url_request_resp(api, items, page, payload)
         if len(lines) == 0:
@@ -110,16 +121,23 @@ def get_login_last(startData, endDate):
 
             province = words_list[0]
             city_detail = words_list[1]
-            # 查找异地登陆账号  当日登陆  非测试用户 且一天只发送一次
-            if index.get('LoginTime')[:10] == datetime.date.today().strftime('%Y-%m-%d'):
+            # 查找异地登陆账号  当日登陆  非测试用户 该方法每小时执行，那么只需要对比每小时的账号即可
+
+            # if int(index.get('LoginTime')[11:13]) - ref_hour <= 2:
+            # if index.get('LoginTime')[:10] == datetime.date.today().strftime('%Y-%m-%d'):
+            if index.get('LoginTime')[:19] > ref_time:
 
                 account = index.get('Account')
-                warning_account = WarningLoginInfo.query.filter_by(account=account).first()
+                # warning_account = WarningLoginInfo.query.filter_by(account=account).first()
+                #
+                # if warning_account is not None:
+                #
+                #     print(warning_account)
+                #     continue
+                if account in warned_accounts:
 
-                if warning_account is not None:
-
-                    print(warning_account)
                     continue
+
                 mt4list = Mt4List.query.filter_by(account=account).first()
 
                 if mt4list and mt4list.group_name not in ['W-SystemTest', 'W-Test']:
@@ -155,7 +173,9 @@ def get_login_last(startData, endDate):
         frame = pd.DataFrame(data)
         df_html = frame.to_html(escape=False)
 
-        mailadd = "lianxiaorui0511@163.com"
+        mailadd = ["lianxiaorui0511@163.com", "notificationenquirywf@gmail.com"]
+        # # mailadd =
+
         # mailadd = "dofuy007@gmail.com"
         sendmail = PySendMail()
         ret = sendmail.mail(df_html, mailadd, warn_type, title)
@@ -165,12 +185,9 @@ def get_login_last(startData, endDate):
             print("邮件发送失败")
 
         for i in range(len(accounts)):
-            print(i)
             warning_info = WarningLoginInfo()
             warning_info.account = accounts[i-1]
-            print(accounts[i-1])
             warning_info.city = address[i-1]
-            print(address[i-1])
 
             warning_info.save()
 

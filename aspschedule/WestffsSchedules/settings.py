@@ -63,13 +63,13 @@ class Config:
     # 任务列表
     SCHEDULER_JOBS = [
         {  # 第一个任务
-            'id': 'GetLoginInfoLog',
+            'id': 'job1',
             'func': 'WestffsSchedules.tasks:get_login_his',
             'args': (date.today()-timedelta(days=1), date.today()-timedelta(days=1)),
             'trigger': {
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
-                'hour': '14',  # 小时数
+                'hour': '02',  # 小时数
                 'minute': '25',
             }
         },
