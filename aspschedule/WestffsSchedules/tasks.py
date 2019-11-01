@@ -18,6 +18,7 @@ from WestffsSchedules.utils.mails import PySendMail
 
 engine = db.get_engine()
 
+
 def method_test(a, b, c):
     print(datetime.datetime.now())
     print('begin')
@@ -127,7 +128,7 @@ def get_login_last(startData, endDate):
 
                     userinfo = UserInfo.query.filter_by(user_id=user_id).first()
 
-                    if userinfo and userinfo.province != province:
+                    if userinfo and userinfo.province != province and userinfo.province != '':
                         userids.append(user_id)
                         usernames.append(userinfo.name)
                         address.append(userinfo.address)

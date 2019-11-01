@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8fd3d39-5a8e-4c04-a7d5-0e30b54c63c4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WestffsSchedules/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WestffsSchedules/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="183" column="19" lean-forward="true" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
+            <state relative-caret-position="1806">
+              <caret line="122" column="63" selection-start-line="122" selection-start-column="63" selection-end-line="122" selection-end-column="63" />
               <folding>
                 <element signature="e#146#161#0" expanded="true" />
               </folding>
@@ -90,32 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WestffsSchedules/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="115" column="39" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WestffsSchedules/ext.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-103">
-              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-              <folding>
-                <element signature="e#145#172#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+            <state relative-caret-position="231">
+              <caret line="74" column="10" lean-forward="true" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
               <folding>
                 <element signature="e#151#160#0" expanded="true" />
               </folding>
@@ -295,12 +271,12 @@
       <workItem from="1572319829555" duration="20427000" />
       <workItem from="1572397237179" duration="23340000" />
       <workItem from="1572483792658" duration="4910000" />
-      <workItem from="1572494327890" duration="8757000" />
+      <workItem from="1572494327890" duration="10784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65785000" />
+    <option name="totallyTimeSpent" value="67812000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -671,8 +647,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="183" column="19" lean-forward="true" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
+        <state relative-caret-position="1806">
+          <caret line="122" column="63" selection-start-line="122" selection-start-column="63" selection-end-line="122" selection-end-column="63" />
           <folding>
             <element signature="e#146#161#0" expanded="true" />
           </folding>
@@ -681,8 +657,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="72" column="31" selection-start-line="72" selection-start-column="31" selection-end-line="72" selection-end-column="31" />
+        <state relative-caret-position="231">
+          <caret line="74" column="10" lean-forward="true" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
           <folding>
             <element signature="e#151#160#0" expanded="true" />
           </folding>

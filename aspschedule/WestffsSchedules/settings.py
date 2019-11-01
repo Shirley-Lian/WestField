@@ -69,8 +69,8 @@ class Config:
             'trigger': {
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
-                'hour': '01',  # 小时数
-                'minute': '10',
+                'hour': '14',  # 小时数
+                'minute': '25',
             }
         },
         {  # 第二个任务
@@ -81,7 +81,7 @@ class Config:
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
                 'hour': '*',  # 小时数
-                'minute': '0',
+                'minute': '59',
             }
         },
         {  # 第三个任务
