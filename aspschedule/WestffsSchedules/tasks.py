@@ -6,6 +6,7 @@
 # 开发工具  : PyCharm
 # 项目名称  : aspschedule
 import datetime
+from datetime import date, timedelta
 
 import pandas as pd
 import requests
@@ -40,7 +41,8 @@ def url_request_resp(api, items, page, data):
     return lines
 
 
-def get_login_his(startTime, endTime):
+def get_login_his():
+    startTime = endTime = date.today() - timedelta(days=3)
     page = 1
     payload = {'orderBy': '-id', 'startTime': startTime, 'endTime': endTime}
     api = 'GetLoginInfoLog'
@@ -77,7 +79,8 @@ def get_login_his(startTime, endTime):
     return True
 
 
-def get_login_last(startData, endDate):
+def get_login_last():
+    startData = endDate = date.today()
     ref_time = (datetime.datetime.now()-datetime.timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%S')
     page = 1
     payload = {'startData': startData, 'endDate': endDate}
@@ -196,7 +199,9 @@ def get_login_last(startData, endDate):
 
 def clear_warning_form():
 
-    db.session.execute("delete from warning_login_info")
+    # db.session.execute("delete from warning_login_info")
+    # 不在白名单的将被删除
+    WarningLoginInfo.query.filter_by(code=0).delete()
     db.session.commit()
 
     return 'delete'

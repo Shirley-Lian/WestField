@@ -65,18 +65,18 @@ class Config:
         {  # 第一个任务
             'id': 'job1',
             'func': 'WestffsSchedules.tasks:get_login_his',
-            'args': (date.today()-timedelta(days=1), date.today()-timedelta(days=1)),
+            # 'args': (date.today()-timedelta(days=1), date.today()-timedelta(days=1)),
             'trigger': {
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
-                'hour': '02',  # 小时数
-                'minute': '25',
+                'hour': '01',  # 小时数
+                'minute': '15',
             }
         },
         {  # 第二个任务
             'id': 'job2',
             'func': 'WestffsSchedules.tasks:get_login_last',
-            'args': (date.today(), date.today()),
+            # 'args': (date.today(), date.today()),
             'trigger': {
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
@@ -91,7 +91,7 @@ class Config:
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
                 'hour': '00',  # 小时数
-                'minute': '01',
+                'minute': '02',
             }
         },
         # {  # 第二个任务，每隔5S执行一次

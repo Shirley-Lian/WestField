@@ -5,9 +5,6 @@
       <change beforePath="$PROJECT_DIR$/WestffsSchedules/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WestffsSchedules/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WestffsSchedules/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/utils/mails.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/utils/mails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/views/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/views/orders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            <state relative-caret-position="427">
+              <caret line="202" column="16" selection-start-line="202" selection-start-column="16" selection-end-line="202" selection-end-column="16" />
               <folding>
                 <element signature="e#146#161#0" expanded="true" />
               </folding>
@@ -82,7 +79,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-929">
+            <state relative-caret-position="349">
               <caret line="25" column="61" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="61" />
               <folding>
                 <element signature="e#146#161#0" expanded="true" />
@@ -91,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
+            <state relative-caret-position="378">
+              <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
               <folding>
                 <element signature="e#151#160#0" expanded="true" />
               </folding>
@@ -106,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="294">
+              <caret line="116" column="40" lean-forward="true" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -143,20 +140,20 @@
         <option value="$PROJECT_DIR$/WestffsSchedules/utils/__init__.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/__init__.py" />
         <option value="$PROJECT_DIR$/manage.py" />
-        <option value="$PROJECT_DIR$/WestffsSchedules/models.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/views/orders.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/utils/mails.py" />
-        <option value="$PROJECT_DIR$/WestffsSchedules/settings.py" />
+        <option value="$PROJECT_DIR$/WestffsSchedules/models.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/tasks.py" />
+        <option value="$PROJECT_DIR$/WestffsSchedules/settings.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="82" />
-    <option name="y" value="24" />
+    <option name="x" value="164" />
+    <option name="y" value="53" />
     <option name="width" value="1745" />
-    <option name="height" value="962" />
+    <option name="height" value="918" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -284,12 +281,12 @@
       <workItem from="1572319829555" duration="20427000" />
       <workItem from="1572397237179" duration="23340000" />
       <workItem from="1572483792658" duration="4910000" />
-      <workItem from="1572494327890" duration="18600000" />
+      <workItem from="1572494327890" duration="22713000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75628000" />
+    <option name="totallyTimeSpent" value="79741000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -301,7 +298,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="82" y="24" width="1745" height="962" extended-state="0" />
+    <frame x="306" y="158" width="1745" height="918" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.12944162" visible="true" weight="0.17388724" />
@@ -318,7 +315,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.4384058" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.36734694" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32971016" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -611,29 +608,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WestffsSchedules/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-929">
-          <caret line="25" column="61" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="61" />
-          <folding>
-            <element signature="e#146#161#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -665,22 +645,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
+    <entry file="file://$PROJECT_DIR$/WestffsSchedules/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
+        <state relative-caret-position="294">
+          <caret line="116" column="40" lean-forward="true" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="25" column="61" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="61" />
           <folding>
-            <element signature="e#151#160#0" expanded="true" />
+            <element signature="e#146#161#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        <state relative-caret-position="427">
+          <caret line="202" column="16" selection-start-line="202" selection-start-column="16" selection-end-line="202" selection-end-column="16" />
           <folding>
             <element signature="e#146#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+          <folding>
+            <element signature="e#151#160#0" expanded="true" />
           </folding>
         </state>
       </provider>

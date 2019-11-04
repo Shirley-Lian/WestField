@@ -118,3 +118,4 @@ class WarningLoginInfo(BaseModel):
 
     account = db.Column(db.Integer, primary_key=True, autoincrement=False, name='account')
     city = db.Column(db.String(128), nullable=False, name='city')
+    code = db.Column(db.Integer, nullable=False, name='code', default=0)
