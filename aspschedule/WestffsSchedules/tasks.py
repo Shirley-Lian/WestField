@@ -10,8 +10,9 @@ from datetime import date, timedelta
 
 import pandas as pd
 import requests
+from flask import config
 
-from WestffsSchedules.ext import db, scheduler
+from WestffsSchedules.ext import db
 from WestffsSchedules.models import LoginInfo, Mt4List, UserInfo, WarningLoginInfo
 
 from WestffsSchedules.utils.city_cut import get_city
@@ -28,7 +29,7 @@ def method_test(a, b, c):
 
 def url_request_resp(api, items, page, data):
     url = r"http://47.75.133.250/api/Values/%s/%d/%d" % (api, items, page)
-    # print(url)
+    print(url)
     # logger.info("login_info url地址：%s" % url_login_info)
     resp = requests.get(url, params=data, timeout=(50, 100)).json()
     # html_json = requests.get(url_login_info, timeout=(5, 10)).json()
@@ -42,7 +43,7 @@ def url_request_resp(api, items, page, data):
 
 
 def get_login_his():
-    startTime = endTime = date.today() - timedelta(days=3)
+    startTime = endTime = date.today() - timedelta(days=1)
     page = 1
     payload = {'orderBy': '-id', 'startTime': startTime, 'endTime': endTime}
     api = 'GetLoginInfoLog'
@@ -107,7 +108,7 @@ def get_login_last():
 
     warn_accs = WarningLoginInfo.query.with_entities(WarningLoginInfo.account).all()
 
-    if len(warn_accs) !=0:
+    if len(warn_accs) != 0:
         for item in warn_accs:
             warned_accounts.append(item.account)
 
@@ -157,7 +158,6 @@ def get_login_last():
                         log_address.append(index.get("City"))
                         log_time.append(index.get("LoginTime"))
 
-                #
                 # user_address = db.session.execute("select province from userinfo where user_id=%d" % user_id)
 
             para = "(%s, %d, '%s', '%s', '%s', '%s', %d, '%s', '%s')" % (index.get('Id'), index.get('Account'),
@@ -177,7 +177,7 @@ def get_login_last():
         df_html = frame.to_html(escape=False)
 
         mailadd = ["lianxiaorui0511@163.com", "notificationenquirywf@gmail.com"]
-        # # mailadd =
+        # mailadd = ["lianxiaorui0511@163.com", ]
 
         # mailadd = "dofuy007@gmail.com"
         sendmail = PySendMail()
@@ -205,3 +205,115 @@ def clear_warning_form():
     db.session.commit()
 
     return 'delete'
+
+
+def add_userinfo():
+    btime = date.today() - timedelta(days=7)
+    etime = date.today().strftime("%Y-%m-%dT%H:%M:%S")
+    page = 1
+    payload = {'BeginTime': btime, 'EndTime': etime}
+    api = 'GetUserInfo'
+    items = 100
+    print(api)
+
+    while True:
+        lines = url_request_resp(api, items, page, payload)
+        page = page + 1
+        if len(lines) == 0 or lines == '':
+            break
+
+        for index in lines:
+            # print(index)
+            user_id = index.get('UserID')
+            had_userinfo = UserInfo.query.filter_by(user_id=user_id).first()
+
+            if had_userinfo:
+                continue
+
+            user = UserInfo()
+            user.user_id = user_id
+            user.name = index.get('UserName')
+            user.name_cn = index.get('UserNameCn')
+            user.birthday = index.get('Birthday').replace('T', ' ').split('.')[0] if index.get('Birthday') is not None else ''
+            user.sex = index.get('Sex')
+            user.address = index.get('Address')
+            user.user_status = index.get('UserStatus')
+            user.agent = index.get('Agent')
+            user.ib = index.get('IB')
+            user.level_id = index.get('LevelID')
+            user.in_money = index.get('InMoney')
+            user.user_money = index.get('UserMoney')
+            user.create_time = index.get('CreateTime').replace('T', ' ').split('.')[0] if index.get('CreateTime') is not None else ''
+            user.last_login_time = index.get('LastLoginTime').replace('T', ' ').split('.')[0] if index.get('LastLoginTime') is not None else ''
+            user.intro_id = index.get('IntroID')
+            user.employee_id = index.get('EmployeeID')
+            user.is_trade_company = index.get('IsTradeCompany')
+            user.is_office = index.get('IsOffice')
+
+            words_list = get_city(index.get('Address'))
+
+            province = words_list[0]
+            city_detail = words_list[1]
+
+            user.province = province
+            user.city = city_detail
+
+            user.save()
+
+
+def add_mt4list():
+    btime = date.today() - timedelta(days=7)
+    etime = date.today().strftime("%Y-%m-%dT%H:%M:%S")
+    page = 1
+    payload = {'BeginTime': btime, 'EndTime': etime}
+    api = 'GetMt4List'
+    items = 100
+    print(api)
+
+    while True:
+        lines = url_request_resp(api, items, page, payload)
+        page = page + 1
+        if len(lines) == 0 or lines == '':
+            break
+
+        for index in lines:
+            # print(index)
+            account = index.get('_Account')
+
+            had_account = Mt4List.query.filter_by(account=account).first()
+
+            if had_account:
+                had_account.in_money = index.get("InMoney")
+                had_account.out_money = index.get("OutMoney")
+                had_account.balance = index.get("Balance")
+                had_account.margin = index.get("Margin")
+                had_account.equity = index.get("Equity")
+                had_account.profit = index.get("Profit")
+                had_account.trade_fee = index.get("TradeFee")
+                had_account.margin = index.get("Margin")
+
+                had_account.save()
+            else:
+
+                mt4list = Mt4List()
+                mt4list.account = account
+                mt4list.user_id = index.get("UserID")
+                mt4list.name = index.get("Mt4Name")
+                mt4list.server_id = index.get("ServerID")
+                mt4list.in_money = index.get("InMoney")
+                mt4list.out_money = index.get("OutMoney")
+                mt4list.balance = index.get("Balance")
+                mt4list.margin = index.get("Margin")
+                mt4list.equity = index.get("Equity")
+                mt4list.profit = index.get("Profit")
+                mt4list.group_name = index.get("GroupName")
+                mt4list.leverage = index.get("Leverage")
+                mt4list.trade_fee = index.get("TradeFee")
+                mt4list.create_time = index.get("CreateTime") if index.get("CreateTime") is not None else ''
+                mt4list.status = index.get("Status") if index.get("Status") is not None else 0
+                mt4list.is_real = index.get("IsReal") if index.get("IsReal") is not None else 0
+                mt4list.credit = index.get("Credit") if index.get("Credit") is not None else 0
+
+                mt4list.save()
+
+

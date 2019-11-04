@@ -10,7 +10,9 @@ import unittest
 import requests
 import datetime
 
+import socket
 from manage import app
+
 
 class LoginTest(unittest.TestCase):
     """构造单元测试案例"""
@@ -19,12 +21,47 @@ class LoginTest(unittest.TestCase):
         client = app.test_client()
 
 
-if __name__ == "__main__":
+def get_host_ip():
+    """
+    查询本机ip地址
+    :return:
+    """
+    try:
+        s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+        s.connect(('8.8.8.8', 80))
+        ip = s.getsockname()[0]
+        # ip = s.gethostname()[0]
+
+    finally:
+        s.close()
+
+    return ip
+
+
+import fcntl
+import struct
+
+
+def get_ip_address(ifname):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    return socket.inet_ntoa(fcntl.ioctl(
+        s.fileno(),
+        0x8915,  # SIOCGIFADDR
+        struct.pack('256s', ifname[:15])
+    )[20:24])
+
+
+if __name__ == '__main__':
+    s = socket.socket()
+    host = socket.gethostname()
+    print(host)
+    print(get_host_ip())
+    print(get_ip_address("virbr0"))
     # unittest.main()
-    d = '2019-03-29T16:17:56.123'
-    print(d[11:13])
-    x = datetime.datetime.strptime(d[:19], '%Y-%m-%dT%H:%M:%S').timestamp()
-    print(x)
+    # d = '2019-03-29T16:17:56.123'
+    # print(d[11:13])
+    # x = datetime.datetime.strptime(d[:19], '%Y-%m-%dT%H:%M:%S').timestamp()
+    # print(x)
 
     # page = 1
     # startData = endDate = '2019-10-31' #datetime.date.today()
@@ -58,15 +95,15 @@ if __name__ == "__main__":
     #         info["city_name"] = city_list[1]
     #     infos.append(info)
     # for item in lines:
-    #     info = LoginInfo()
-    #     info.Id = item.get('Id')
-    #     info.Account = item.get('Account')
-    #     info.Ip = item.get('Ip')
-    #     info.Address = item.get('Address')
-    #     info.City = item.get('City')
-    #     info.LoginTime = item.get('LoginTime').replace('T', ' ')
-    #     info.LeaveTime = item.get('LeaveTime').replace('T', ' ')
-    #     info.OnlineMinute = item.get('OnlineMinute')
+    #     user = Userinfo()
+    #     user.Id = index.get('Id')
+    #     user.Account = index.get('Account')
+    #     user.Ip = index.get('Ip')
+    #     user.Address = index.get('Address')
+    #     user.City = index.get('City')
+    #     user.LoginTime = index.get('LoginTime').replace('T', ' ')
+    #     user.LeaveTime = index.get('LeaveTime').replace('T', ' ')
+    #     user.OnlineMinute = index.get('OnlineMinute')
     #     city_list = city_cut(info.City)
     #     if len(city_list) == 1:
     #         info.province = city_list[0]

@@ -157,6 +157,7 @@ class PySendMail:
                 }
 
             </STYLE>
+        
         </head>
         """
 

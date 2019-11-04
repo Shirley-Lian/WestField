@@ -7,7 +7,6 @@
 # 项目名称  : aspschedule
 
 import os
-from datetime import date, timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -63,7 +62,7 @@ class Config:
     # 任务列表
     SCHEDULER_JOBS = [
         {  # 第一个任务
-            'id': 'job1',
+            'id': 'GetLoginInfoLog',
             'func': 'WestffsSchedules.tasks:get_login_his',
             # 'args': (date.today()-timedelta(days=1), date.today()-timedelta(days=1)),
             'trigger': {
@@ -74,7 +73,7 @@ class Config:
             }
         },
         {  # 第二个任务
-            'id': 'job2',
+            'id': 'GetLoginInfo',
             'func': 'WestffsSchedules.tasks:get_login_last',
             # 'args': (date.today(), date.today()),
             'trigger': {
@@ -85,13 +84,33 @@ class Config:
             }
         },
         {  # 第三个任务
-            'id': 'job3',
+            'id': 'clear_warning_form',
             'func': 'WestffsSchedules.tasks:clear_warning_form',
             'trigger': {
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
                 'hour': '00',  # 小时数
                 'minute': '02',
+            }
+        },
+        {  # 第四个任务
+            'id': 'GetUserInfo',
+            'func': 'WestffsSchedules.tasks:add_userinfo',
+            'trigger': {
+                'type': 'cron',  # 类型
+                'day_of_week': "0-6",  # 可定义具体哪几天要执行
+                'hour': '*',  # 小时数
+                'minute': '*/5',
+            }
+        },
+        {  # 第5个任务
+            'id': 'GetMt4List',
+            'func': 'WestffsSchedules.tasks:add_mt4list',
+            'trigger': {
+                'type': 'cron',  # 类型
+                'day_of_week': "0-6",  # 可定义具体哪几天要执行
+                'hour': '*',  # 小时数
+                'minute': '*/3',
             }
         },
         # {  # 第二个任务，每隔5S执行一次

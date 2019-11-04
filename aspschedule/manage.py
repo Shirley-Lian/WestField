@@ -6,7 +6,7 @@ import os
 from WestffsSchedules import create_app
 
 
-os.environ['FLASK_ENV'] = 'develop'
+# os.environ['FLASK_ENV'] = 'develop'
 
 env = os.environ.get("FLASK_ENV") or 'default'
 

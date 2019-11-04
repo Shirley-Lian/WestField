@@ -65,7 +65,7 @@ class Mt4List(BaseModel):
 
     __tablename__ = 'mt4list'
 
-    id = db.Column(db.Integer, primary_key=True, autoincrement=False)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     account = db.Column(db.Integer, nullable=False, name='account')
     user_id = db.Column(db.Integer, nullable=False, name='user_id')
     name = db.Column(db.String(64), nullable=False, name='mt4_name')
@@ -82,14 +82,14 @@ class Mt4List(BaseModel):
     create_time = db.Column(db.DateTime, nullable=False)
     status = db.Column(db.Integer, nullable=False, name='status')
     is_real = db.Column(db.Integer, nullable=False, name='is_real')
-    credit = db.Column(db.Float, nullable=False, name='credit')
+    credit = db.Column(db.Float, nullable=False, name='credit', default=0)
 
 
 class UserInfo(BaseModel):
 
     __tablename__ = 'userinfo'
 
-    id = db.Column(db.Integer, primary_key=True, autoincrement=False)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     user_id = db.Column(db.Integer, nullable=False, name='user_id')
     name = db.Column(db.String(64), nullable=False, name='user_name')
     name_cn = db.Column(db.String(64), nullable=False, name='user_name_cn')
