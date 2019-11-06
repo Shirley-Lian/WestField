@@ -139,9 +139,9 @@ class Config:
 
 class DevelopConfig(Config):
 
-    DEBUG = True
+    # DEBUG = True
     dbinfo = {
-     
+
     }
 
     SQLALCHEMY_DATABASE_URI = get_db_uri(dbinfo)
