@@ -139,7 +139,7 @@ class Config:
 
 class DevelopConfig(Config):
 
-    # DEBUG = True
+    DEBUG = True
     dbinfo = {
 
     }
