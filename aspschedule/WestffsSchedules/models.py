@@ -119,3 +119,29 @@ class WarningLoginInfo(BaseModel):
     account = db.Column(db.Integer, primary_key=True, autoincrement=False, name='account')
     city = db.Column(db.String(128), nullable=False, name='city')
     code = db.Column(db.Integer, nullable=False, name='code', default=0)
+
+
+class Mt4order(BaseModel):
+
+    __tablename__ = 'mt4order'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    account = db.Column(db.Integer, nullable=False, name='account')
+    user_id = db.Column(db.Integer, nullable=False, name='user_id')
+    name = db.Column(db.String(64), nullable=False, name='mt4_name')
+    server_id = db.Column(db.Integer, nullable=False, name='server_id')
+    in_money = db.Column(db.Float, nullable=False, name='in_money')
+    out_money = db.Column(db.Float, nullable=False, name='out_money')
+    balance = db.Column(db.Float, nullable=False, name='balance')
+    margin = db.Column(db.Float, nullable=False, name='margin')
+    equity = db.Column(db.Float, nullable=False, name='equity')
+    profit = db.Column(db.Float, nullable=False, name='profit')
+    group_name = db.Column(db.String(64), nullable=False)
+    leverage = db.Column(db.Integer, nullable=False, name='leverage')
+    trade_fee = db.Column(db.Float, nullable=False, name='trade_fee')
+    create_time = db.Column(db.DateTime, nullable=False)
+    status = db.Column(db.Integer, nullable=False, name='status')
+    is_real = db.Column(db.Integer, nullable=False, name='is_real')
+    credit = db.Column(db.Float, nullable=False, name='credit', default=0)
+
+

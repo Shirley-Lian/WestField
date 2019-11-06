@@ -209,7 +209,7 @@ def clear_warning_form():
 
 def add_userinfo():
     btime = date.today() - timedelta(days=7)
-    etime = date.today().strftime("%Y-%m-%dT%H:%M:%S")
+    etime = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     page = 1
     payload = {'BeginTime': btime, 'EndTime': etime}
     api = 'GetUserInfo'
@@ -226,11 +226,12 @@ def add_userinfo():
             # print(index)
             user_id = index.get('UserID')
             had_userinfo = UserInfo.query.filter_by(user_id=user_id).first()
-
+            # print(had_userinfo)
             if had_userinfo:
                 continue
 
             user = UserInfo()
+            print(user_id)
             user.user_id = user_id
             user.name = index.get('UserName')
             user.name_cn = index.get('UserNameCn')
@@ -263,7 +264,7 @@ def add_userinfo():
 
 def add_mt4list():
     btime = date.today() - timedelta(days=7)
-    etime = date.today().strftime("%Y-%m-%dT%H:%M:%S")
+    etime = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     page = 1
     payload = {'BeginTime': btime, 'EndTime': etime}
     api = 'GetMt4List'
@@ -281,7 +282,7 @@ def add_mt4list():
             account = index.get('_Account')
 
             had_account = Mt4List.query.filter_by(account=account).first()
-
+            # print(had_account)
             if had_account:
                 had_account.in_money = index.get("InMoney")
                 had_account.out_money = index.get("OutMoney")
@@ -294,7 +295,7 @@ def add_mt4list():
 
                 had_account.save()
             else:
-
+                print(account)
                 mt4list = Mt4List()
                 mt4list.account = account
                 mt4list.user_id = index.get("UserID")
@@ -315,5 +316,56 @@ def add_mt4list():
                 mt4list.credit = index.get("Credit") if index.get("Credit") is not None else 0
 
                 mt4list.save()
+
+
+# 通过账号获取该时间段内的订单记录
+def get_mt4order():
+    etime = datetime.datetime.now().strftime("%Y-%m-%dT%H:00:00")
+    btime = (datetime.datetime.now() - datetime.timedelta(hours=10)).strftime("%Y-%m-%dT%H:00:00")
+    page = 1
+    payload = {'BeginTime': btime, 'EndTime': etime}
+    api = 'GetMt4List'
+    items = 100
+    print(api)
+
+    while True:
+        lines = url_request_resp(api, items, page, payload)
+        page = page + 1
+        if len(lines) == 0 or lines == '':
+            break
+
+        para = []
+        for index in lines:
+            # 如果有balance交易则更新出入金
+            if index.get('Cmd') == "Balance":
+                mt4list = Mt4List.query.filter_by(account=index.get('Account')).first()
+                mt4list.in_money = index.get("InMoney")
+                mt4list.out_money = index.get("OutMoney")
+                mt4list.balance = index.get("Balance")
+                mt4list.equity = index.get("Equity")
+                mt4list.profit = index.get("Profit")
+                mt4list.trade_fee = index.get("TradeFee")
+                mt4list.save()
+
+            for i in index.keys():
+                if index[i] is None:
+                    index[i] = ''
+                else:
+                    if i in ['OpenTime', 'CloseTime']:
+                        index[i] = index[i].replace('T', ' ')
+
+            param = (
+                    index['Mt4Order'],
+                    index['Account'], index['Cmd'], index['Symbol'], index['OpenPrice'], index['ClosePrice'],
+                    index['Profit'], index['Volume'], index['OpenTime'], index['CloseTime'], index['ServerID'],
+                    index['UserID'], index['TrustInMoney'], index['NightInterest'], index['SL'],
+                    index['TP'], index['Commission'])
+            params = "(%d,%d,'%s','%s',%f,%f,%f,%f,'%s','%s',%d,%d,%f,%f,%f,%f,'%s')" % param
+            para.append(params)
+
+        paras = ",".join(para)
+        # print(paras)
+        sql = "insert ignore into mt4order (mt4_order,account,cmd,symbol,open_price,close_price,profit,volume," \
+              "open_time,close_time,server_id,user_id,trust_in_money,night_interest,sl,tp,commission) values %s " % paras
 
 

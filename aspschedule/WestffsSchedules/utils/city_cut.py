@@ -3,14 +3,19 @@ import jieba
 
 
 def city_cut(citys):
+    # print(citys)
     if citys is None:
         seg_list = ['', '']
     elif citys == "新疆阿勒泰地区":
         seg_list = ['新疆维吾尔自治区', '阿勒泰地区']
     else:
         seg_list = jieba.lcut(citys)
+        # print(seg_list)
         for i in seg_list:
             # print(i)
+            if i == "新疆伊犁哈萨克自治州":
+                seg_list = ['新疆维吾尔自治区', '伊犁哈萨克自治州']
+                break
             if '内蒙古' in i:
                 index = seg_list.index(i)
                 seg_list[index] = '内蒙古自治区'

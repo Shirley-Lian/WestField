@@ -36,6 +36,12 @@ class Config:
 
     PERMANENT_SESSION_LIFETIME = 140
 
+    SQLALCHEMY_POOL_SIZE = 10
+
+    SQLALCHEMY_POOL_RECYCLE = 5*60
+
+    SQLALCHEMY_MAX_OVERFLOW = 10
+
     # 配置邮箱
     MAIL_SERVER = "smtp.163.com"
 
@@ -127,13 +133,7 @@ class DevelopConfig(Config):
 
     # DEBUG = True
     dbinfo = {
-        'ENGINE': 'mysql',
-        'DRIVER': 'pymysql',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST': '62.234.1.36',
-        'PORT': '3306',
-        'DBNAME': 'flask03',
+
     }
 
     SQLALCHEMY_DATABASE_URI = get_db_uri(dbinfo)
