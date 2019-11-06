@@ -10,7 +10,6 @@ from datetime import date, timedelta
 
 import pandas as pd
 import requests
-from flask import config
 
 from WestffsSchedules.ext import db
 from WestffsSchedules.models import LoginInfo, Mt4List, UserInfo, WarningLoginInfo

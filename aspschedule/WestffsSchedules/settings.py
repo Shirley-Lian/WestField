@@ -7,6 +7,7 @@
 # 项目名称  : aspschedule
 
 import os
+import time
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -36,6 +37,13 @@ class Config:
 
     PERMANENT_SESSION_LIFETIME = 140
 
+    # restful 配置
+    RESTFUL_JSON = dict(ensure_ascii=False)
+
+    log_dir_path = os.path.join(BASE_DIR, 'logs')
+    LOG_FILE_PATH = os.path.join(log_dir_path, time.strftime('%Y-%m-%d', time.localtime(time.time())) + '.log')
+
+    # 数据库配置
     SQLALCHEMY_POOL_SIZE = 10
 
     SQLALCHEMY_POOL_RECYCLE = 5*60
@@ -74,8 +82,8 @@ class Config:
             'trigger': {
                 'type': 'cron',  # 类型
                 'day_of_week': "0-6",  # 可定义具体哪几天要执行
-                'hour': '01',  # 小时数
-                'minute': '15',
+                'hour': '00',  # 小时数
+                'minute': '30',
             }
         },
         {  # 第二个任务
@@ -131,9 +139,15 @@ class Config:
 
 class DevelopConfig(Config):
 
-    # DEBUG = True
+    DEBUG = True
     dbinfo = {
-
+        'ENGINE': 'mysql',
+        'DRIVER': 'pymysql',
+        'USER': 'lianxiaorui',
+        'PASSWORD': '900417lian',
+        'HOST': '101.37.199.145',
+        'PORT': '3306',
+        'DBNAME': 'westfield_crm',
     }
 
     SQLALCHEMY_DATABASE_URI = get_db_uri(dbinfo)

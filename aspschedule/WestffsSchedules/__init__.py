@@ -6,9 +6,10 @@
 # 开发工具  : PyCharm
 # 项目名称  : aspschedule
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 
+from WestffsSchedules.apis import init_api
 from WestffsSchedules.ext import init_ext
+from WestffsSchedules.logger import add_file_logger
 from WestffsSchedules.settings import envs
 
 from WestffsSchedules.views import init_view
@@ -18,6 +19,11 @@ def create_app(env):
     app = Flask(__name__)
 
     app.config.from_object(envs.get(env))
+
+    add_file_logger(app)
+
+    # 加载RESTful
+    init_api(app)
 
     init_view(app=app)
 
