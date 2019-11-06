@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8fd3d39-5a8e-4c04-a7d5-0e30b54c63c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WestffsSchedules/apis/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WestffsSchedules/apis/warning_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WestffsSchedules/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WestffsSchedules/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/views/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/views/orders.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/apis/warning_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1365">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="294">
+              <caret line="128" column="27" lean-forward="true" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
               <folding>
                 <element signature="e#153#191#0" expanded="true" />
               </folding>
@@ -126,11 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1722">
-              <caret line="91" column="31" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+            <state relative-caret-position="168">
+              <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
               <folding>
                 <element signature="e#151#160#0" expanded="true" />
               </folding>
@@ -178,8 +172,8 @@
         <option value="$PROJECT_DIR$/WestffsSchedules/logger.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/__init__.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/tasks.py" />
-        <option value="$PROJECT_DIR$/WestffsSchedules/settings.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/apis/warning_api.py" />
+        <option value="$PROJECT_DIR$/WestffsSchedules/settings.py" />
       </list>
     </option>
   </component>
@@ -315,12 +309,12 @@
       <workItem from="1572319829555" duration="20427000" />
       <workItem from="1572397237179" duration="23340000" />
       <workItem from="1572483792658" duration="4910000" />
-      <workItem from="1572494327890" duration="70908000" />
+      <workItem from="1572494327890" duration="71394000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127936000" />
+    <option name="totallyTimeSpent" value="128422000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -333,6 +327,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="359" y="6" width="1529" height="1011" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.12944162" visible="true" weight="0.11912866" />
       <window_info id="Structure" order="1" sideWeight="0.8708861" side_tool="true" weight="0.18689321" />
@@ -715,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1722">
-          <caret line="91" column="31" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
-          <folding>
-            <element signature="e#151#160#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/apis/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -747,10 +732,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/apis/warning_api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1365">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="294">
+          <caret line="128" column="27" lean-forward="true" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
           <folding>
             <element signature="e#153#191#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
+          <folding>
+            <element signature="e#151#160#0" expanded="true" />
           </folding>
         </state>
       </provider>

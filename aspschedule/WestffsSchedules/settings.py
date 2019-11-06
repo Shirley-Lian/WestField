@@ -141,13 +141,7 @@ class DevelopConfig(Config):
 
     DEBUG = True
     dbinfo = {
-        'ENGINE': 'mysql',
-        'DRIVER': 'pymysql',
-        'USER': 'lianxiaorui',
-        'PASSWORD': '900417lian',
-        'HOST': '101.37.199.145',
-        'PORT': '3306',
-        'DBNAME': 'westfield_crm',
+     
     }
 
     SQLALCHEMY_DATABASE_URI = get_db_uri(dbinfo)
