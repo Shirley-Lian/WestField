@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8fd3d39-5a8e-4c04-a7d5-0e30b54c63c4" name="Default Changelist" comment="" />
+    <list default="true" id="b8fd3d39-5a8e-4c04-a7d5-0e30b54c63c4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,8 +128,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
-              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="189">
+              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -180,8 +182,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="538" />
-    <option name="y" value="18" />
+    <option name="x" value="166" />
+    <option name="y" value="39" />
     <option name="width" value="1129" />
     <option name="height" value="1011" />
   </component>
@@ -311,12 +313,12 @@
       <workItem from="1572319829555" duration="20427000" />
       <workItem from="1572397237179" duration="23340000" />
       <workItem from="1572483792658" duration="4910000" />
-      <workItem from="1572494327890" duration="77111000" />
+      <workItem from="1572494327890" duration="77392000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134139000" />
+    <option name="totallyTimeSpent" value="134420000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -331,7 +333,7 @@
     <frame x="538" y="18" width="1129" height="1011" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.12944162" visible="true" weight="0.1637044" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.12944162" visible="true" weight="0.1637044" />
       <window_info id="Structure" order="1" sideWeight="0.8708861" side_tool="true" weight="0.18689321" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -345,7 +347,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33751425" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33751425" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32971016" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -747,8 +749,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="189">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
     </entry>
