@@ -120,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/nginx.conf">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="18" column="90" selection-start-line="18" selection-start-column="90" selection-end-line="18" selection-end-column="90" />
+              <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -172,11 +172,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="24" />
-    <option name="y" value="1" />
-    <option name="width" value="1677" />
-    <option name="height" value="1009" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="673" />
+    <option name="width" value="1129" />
+    <option name="height" value="1011" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -304,12 +303,12 @@
       <workItem from="1572319829555" duration="20427000" />
       <workItem from="1572397237179" duration="23340000" />
       <workItem from="1572483792658" duration="4910000" />
-      <workItem from="1572494327890" duration="80374000" />
+      <workItem from="1572494327890" duration="81080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137402000" />
+    <option name="totallyTimeSpent" value="138108000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -321,10 +320,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="673" y="0" width="1129" height="1011" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.12944162" visible="true" weight="0.09328358" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.12944162" visible="true" weight="0.1637044" />
       <window_info id="Structure" order="1" sideWeight="0.8708861" side_tool="true" weight="0.18689321" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -338,7 +337,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32104123" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.18814139" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32971016" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -741,7 +740,7 @@
     <entry file="file://$PROJECT_DIR$/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="18" column="90" selection-start-line="18" selection-start-column="90" selection-end-line="18" selection-end-column="90" />
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
         </state>
       </provider>
     </entry>
