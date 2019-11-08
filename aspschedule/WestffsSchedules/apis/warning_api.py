@@ -44,12 +44,12 @@ class SafeAccountResource(Resource):
             "msg": "ok",
             "data": warn_act,
         }
-        current_app.logger.info('get {} from white list' % account)
 
         return data
 
-    def delete(self, account):
+    def post(self):
 
+        account = request.values.get('account')
         warn_act = WarningLoginInfo.query.filter_by(account=account).first()
 
         if not warn_act:
@@ -63,6 +63,9 @@ class SafeAccountResource(Resource):
             "msg": "delete success",
             "status": 204
         }
+
+        current_app.logger.info('delete {} from white list'.format(account))
+
         return data
 
 
@@ -71,7 +74,7 @@ class AddSafeAccountResource(Resource):
     @marshal_with(single_warning_fields)
     def post(self):
 
-        account = request.form.get('account')
+        account = request.values.get('account')
         city = ''
         code = 1
 
