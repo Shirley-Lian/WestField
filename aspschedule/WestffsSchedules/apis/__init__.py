@@ -17,6 +17,6 @@ def init_api(app):
     api.init_app(app=app)
 
 
-api.add_resource(SafeAccountResource, "/safeact/<int:account>/")
+api.add_resource(SafeAccountResource, "/deletesafe/")
 api.add_resource(SafeAccountsResource, "/white/accounts/<int:page>/")
 api.add_resource(AddSafeAccountResource, "/addsafe/accounts/")

@@ -34,18 +34,18 @@ multi_warning_fields = {
 
 class SafeAccountResource(Resource):
 
-    @marshal_with(single_warning_fields)
-    def get(self, account):
-        warn_act = WarningLoginInfo.query.filter_by(account=account).first()
-        print(warn_act.city)
-
-        data = {
-            "status": 200,
-            "msg": "ok",
-            "data": warn_act,
-        }
-
-        return data
+    # @marshal_with(single_warning_fields)
+    # def get(self, account):
+    #     warn_act = WarningLoginInfo.query.filter_by(account=account).first()
+    #     print(warn_act.city)
+    #
+    #     data = {
+    #         "status": 200,
+    #         "msg": "ok",
+    #         "data": warn_act,
+    #     }
+    #
+    #     return data
 
     def post(self):
 
@@ -54,7 +54,7 @@ class SafeAccountResource(Resource):
 
         if not warn_act:
             # abort(404)
-            abort(404, message="account doesn't exist", msg="fail")
+            abort(404, message="account doesn't exist", msg="fail", code=400)
 
         if not warn_act.delete():
             abort(404)
