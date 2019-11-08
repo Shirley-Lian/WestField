@@ -260,6 +260,8 @@ def add_userinfo():
 
             user.save()
 
+    return 'success'
+
 
 def add_mt4list():
     btime = date.today() - timedelta(days=7)
@@ -315,6 +317,8 @@ def add_mt4list():
                 mt4list.credit = index.get("Credit") if index.get("Credit") is not None else 0
 
                 mt4list.save()
+
+    return 'success'
 
 
 # 通过账号获取该时间段内的订单记录
