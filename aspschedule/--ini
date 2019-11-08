@@ -1,0 +1,362 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Nov  7 12:11:16 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 07 November 2019 03:02:18
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_5_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/coding/WestField/aspschedule
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/coding/WestField/aspschedule
+your processes number limit is 7266
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Nov  5 2019, 17:03:59)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
+Python main interpreter initialized at 0x2685e10
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2685e10 pid: 17390 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 17390)
+spawned uWSGI worker 1 (pid: 17426, cores: 1)
+GetMt4List
+http://47.75.133.250/api/Values/GetMt4List/100/1
+http://47.75.133.250/api/Values/GetMt4List/100/2
+GetMt4List
+http://47.75.133.250/api/Values/GetMt4List/100/1
+GetUserInfo
+http://47.75.133.250/api/Values/GetUserInfo/100/1
+211005
+http://47.75.133.250/api/Values/GetUserInfo/100/2
+http://47.75.133.250/api/Values/GetMt4List/100/2
+[pid: 17426|app: 0|req: 1/1] 112.226.163.184 () {40 vars in 712 bytes} [Thu Nov  7 12:15:30 2019] GET / => generated 12 bytes in 3 msecs (HTTP/1.1 200) 2 headers in 79 bytes (1 switches on core 0)
+[pid: 17426|app: 0|req: 2/2] 112.226.163.184 () {40 vars in 660 bytes} [Thu Nov  7 12:15:30 2019] GET /favicon.ico => generated 232 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+上海
+[2019-11-07 12:15:42,819] ERROR in app: Exception on /safeact/123456/ [GET]
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_restful/__init__.py", line 665, in wrapper
+    resp = f(*args, **kwargs)
+  File "./WestffsSchedules/apis/warning_api.py", line 47, in get
+    current_app.logger.info('get {} from white list' % account)
+TypeError: not all arguments converted during string formatting
+[pid: 17426|app: 0|req: 3/3] 112.226.163.184 () {40 vars in 742 bytes} [Thu Nov  7 12:15:42 2019] GET /safeact/123456/ => generated 37 bytes in 713 msecs (HTTP/1.1 500) 2 headers in 90 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Nov  8 15:06:22 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 07 November 2019 03:02:18
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_5_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/coding/WestField/aspschedule
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/coding/WestField/aspschedule
+your processes number limit is 7266
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Nov  5 2019, 17:03:59)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
+Python main interpreter initialized at 0x25e1e30
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x25e1e30 pid: 1360 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1360)
+spawned uWSGI worker 1 (pid: 1380, cores: 1)
+GetMt4List
+http://47.75.133.250/api/Values/GetMt4List/100/1
+http://47.75.133.250/api/Values/GetMt4List/100/2
+[2019-11-08 15:09:13,488] ERROR in app: Exception on /safeact/1/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+TypeError: post() got an unexpected keyword argument 'account'
+[pid: 1380|app: 0|req: 1/1] 112.226.163.184 () {44 vars in 754 bytes} [Fri Nov  8 15:09:13 2019] POST /safeact/1/ => generated 37 bytes in 94 msecs (HTTP/1.1 500) 2 headers in 90 bytes (1 switches on core 0)
+[pid: 1380|app: 0|req: 2/2] 59.110.143.94 () {36 vars in 554 bytes} [Fri Nov  8 15:09:57 2019] GET /phpmyadmin/ => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 72 bytes (1 switches on core 0)
+GetUserInfo
+http://47.75.133.250/api/Values/GetUserInfo/100/1
+211007
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.023 seconds.
+Prefix dict has been built succesfully.
+Job "GetUserInfo (trigger: cron[day_of_week='0-6', hour='*', minute='*/5'], next run at: 2019-11-08 15:15:00 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "./WestffsSchedules/tasks.py", line 253, in add_userinfo
+    words_list = get_city(index.get('Address'))
+  File "./WestffsSchedules/utils/city_cut.py", line 109, in get_city
+    words_list = city_cut(citys)
+  File "./WestffsSchedules/utils/city_cut.py", line 77, in city_cut
+    index = seg_list.index(i)
+ValueError: '新疆巴音郭楞蒙古自治州' is not in list
+[pid: 1380|app: 0|req: 3/3] 112.226.163.184 () {44 vars in 765 bytes} [Fri Nov  8 15:10:09 2019] GET /white/accounts/1 => generated 289 bytes in 2 msecs (HTTP/1.1 308) 3 headers in 149 bytes (1 switches on core 0)
+[pid: 1380|app: 0|req: 4/4] 112.226.163.184 () {46 vars in 823 bytes} [Fri Nov  8 15:10:09 2019] GET /white/accounts/1/ => generated 486 bytes in 876 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 0)
+[2019-11-08 15:11:24,819] ERROR in app: Exception on /safeact/1/ [POST]
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/python3/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_restful/__init__.py", line 458, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_restful/__init__.py", line 573, in dispatch_request
+    resp = meth(*args, **kwargs)
+TypeError: post() got an unexpected keyword argument 'account'
+[pid: 1380|app: 0|req: 5/5] 112.226.163.184 () {44 vars in 754 bytes} [Fri Nov  8 15:11:24 2019] POST /safeact/1/ => generated 37 bytes in 1 msecs (HTTP/1.1 500) 2 headers in 90 bytes (1 switches on core 0)
+GetMt4List
+http://47.75.133.250/api/Values/GetMt4List/100/1
+http://47.75.133.250/api/Values/GetMt4List/100/2
+GetMt4List
+http://47.75.133.250/api/Values/GetMt4List/100/1
+GetUserInfo
+http://47.75.133.250/api/Values/GetUserInfo/100/1
+http://47.75.133.250/api/Values/GetMt4List/100/2
+211007
+Job "GetUserInfo (trigger: cron[day_of_week='0-6', hour='*', minute='*/5'], next run at: 2019-11-08 15:20:00 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "./WestffsSchedules/tasks.py", line 253, in add_userinfo
+    words_list = get_city(index.get('Address'))
+  File "./WestffsSchedules/utils/city_cut.py", line 109, in get_city
+    words_list = city_cut(citys)
+  File "./WestffsSchedules/utils/city_cut.py", line 77, in city_cut
+    index = seg_list.index(i)
+ValueError: '新疆巴音郭楞蒙古自治州' is not in list
+GetMt4List
+http://47.75.133.250/api/Values/GetMt4List/100/1
+6214964
+http://47.75.133.250/api/Values/GetMt4List/100/2
+GetUserInfo
+http://47.75.133.250/api/Values/GetUserInfo/100/1
+211007
+Job "GetUserInfo (trigger: cron[day_of_week='0-6', hour='*', minute='*/5'], next run at: 2019-11-08 15:25:00 CST)" raised an exception
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/executors/base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "./WestffsSchedules/tasks.py", line 253, in add_userinfo
+    words_list = get_city(index.get('Address'))
+  File "./WestffsSchedules/utils/city_cut.py", line 109, in get_city
+    words_list = city_cut(citys)
+  File "./WestffsSchedules/utils/city_cut.py", line 77, in city_cut
+    index = seg_list.index(i)
+ValueError: '新疆巴音郭楞蒙古自治州' is not in list
+GetMt4List
+http://47.75.133.250/api/Values/GetMt4List/100/1
+http://47.75.133.250/api/Values/GetMt4List/100/2
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Nov  8 15:26:28 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 07 November 2019 03:02:18
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_5_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/coding/WestField/aspschedule
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/coding/WestField/aspschedule
+your processes number limit is 7266
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Nov  5 2019, 17:03:59)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
+Python main interpreter initialized at 0x1cfee30
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "./manage.py", line 13, in <module>
+    app = create_app(env)
+  File "./WestffsSchedules/__init__.py", line 30, in create_app
+    init_ext(app=app)
+  File "./WestffsSchedules/ext.py", line 25, in init_ext
+    scheduler.init_app(app=app)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_apscheduler/scheduler.py", line 82, in init_app
+    self._load_jobs()
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_apscheduler/scheduler.py", line 328, in _load_jobs
+    self.add_job(**job)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_apscheduler/scheduler.py", line 160, in add_job
+    return self._scheduler.add_job(**job_def)
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/schedulers/base.py", line 434, in add_job
+    job = Job(self, **job_kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/job.py", line 49, in __init__
+    self._modify(id=id or uuid4().hex, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/job.py", line 162, in _modify
+    func = ref_to_obj(func)
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/util.py", line 294, in ref_to_obj
+    obj = __import__(modulename, fromlist=[rest])
+  File "./WestffsSchedules/tasks.py", line 20, in <module>
+    engine = db.get_engine()
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 956, in get_engine
+    return connector.get_engine()
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 559, in get_engine
+    sa_url = make_url(uri)
+  File "/usr/local/python3/lib/python3.7/site-packages/sqlalchemy/engine/url.py", line 229, in make_url
+    return _parse_rfc1738_args(name_or_url)
+  File "/usr/local/python3/lib/python3.7/site-packages/sqlalchemy/engine/url.py", line 288, in _parse_rfc1738_args
+    return URL(name, **components)
+  File "/usr/local/python3/lib/python3.7/site-packages/sqlalchemy/engine/url.py", line 71, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: ''
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 26105)
+spawned uWSGI worker 1 (pid: 26128, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 26128|app: -1|req: -1/1] 112.226.163.184 () {44 vars in 761 bytes} [Fri Nov  8 15:27:35 2019] GET /white/accounts/1 => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 26128|app: -1|req: -1/2] 112.226.163.184 () {44 vars in 761 bytes} [Fri Nov  8 15:28:21 2019] GET /white/accounts/1 => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 26128|app: -1|req: -1/3] 112.226.163.184 () {44 vars in 761 bytes} [Fri Nov  8 15:28:27 2019] GET /white/accounts/1 => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 26128|app: -1|req: -1/4] 112.226.163.184 () {44 vars in 763 bytes} [Fri Nov  8 15:28:37 2019] GET /white/accounts/1/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 26128|app: -1|req: -1/5] 112.226.163.184 () {40 vars in 712 bytes} [Fri Nov  8 15:29:29 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Nov  8 15:30:24 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 07 November 2019 03:02:18
+os: Linux-3.10.0-957.21.3.el7.x86_64 #1 SMP Tue Jun 18 16:35:19 UTC 2019
+nodename: VM_0_5_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/local/coding/WestField/aspschedule
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/local/coding/WestField/aspschedule
+your processes number limit is 7266
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.2 (default, Nov  5 2019, 17:03:59)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
+Python main interpreter initialized at 0x26b3e30
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145840 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "./manage.py", line 13, in <module>
+    app = create_app(env)
+  File "./WestffsSchedules/__init__.py", line 30, in create_app
+    init_ext(app=app)
+  File "./WestffsSchedules/ext.py", line 25, in init_ext
+    scheduler.init_app(app=app)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_apscheduler/scheduler.py", line 82, in init_app
+    self._load_jobs()
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_apscheduler/scheduler.py", line 328, in _load_jobs
+    self.add_job(**job)
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_apscheduler/scheduler.py", line 160, in add_job
+    return self._scheduler.add_job(**job_def)
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/schedulers/base.py", line 434, in add_job
+    job = Job(self, **job_kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/job.py", line 49, in __init__
+    self._modify(id=id or uuid4().hex, **kwargs)
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/job.py", line 162, in _modify
+    func = ref_to_obj(func)
+  File "/usr/local/python3/lib/python3.7/site-packages/apscheduler/util.py", line 294, in ref_to_obj
+    obj = __import__(modulename, fromlist=[rest])
+  File "./WestffsSchedules/tasks.py", line 20, in <module>
+    engine = db.get_engine()
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 956, in get_engine
+    return connector.get_engine()
+  File "/usr/local/python3/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 559, in get_engine
+    sa_url = make_url(uri)
+  File "/usr/local/python3/lib/python3.7/site-packages/sqlalchemy/engine/url.py", line 229, in make_url
+    return _parse_rfc1738_args(name_or_url)
+  File "/usr/local/python3/lib/python3.7/site-packages/sqlalchemy/engine/url.py", line 288, in _parse_rfc1738_args
+    return URL(name, **components)
+  File "/usr/local/python3/lib/python3.7/site-packages/sqlalchemy/engine/url.py", line 71, in __init__
+    self.port = int(port)
+ValueError: invalid literal for int() with base 10: ''
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 30944)
+spawned uWSGI worker 1 (pid: 30976, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 30976|app: -1|req: -1/1] 112.226.163.184 () {42 vars in 743 bytes} [Fri Nov  8 15:30:38 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
