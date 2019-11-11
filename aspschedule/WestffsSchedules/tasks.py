@@ -12,10 +12,11 @@ import pandas as pd
 import requests
 
 from WestffsSchedules.ext import db
-from WestffsSchedules.models import LoginInfo, Mt4List, UserInfo, WarningLoginInfo
+from WestffsSchedules.models import LoginInfo, Mt4List, UserInfo, WarningLoginInfo, Mt4order
 
-from WestffsSchedules.utils.city_cut import get_city
+from WestffsSchedules.utils.city_cut import get_city, user_city_cut
 from WestffsSchedules.utils.mails import PySendMail
+
 
 engine = db.get_engine()
 
@@ -26,22 +27,36 @@ def method_test(a, b, c):
     print(a+b, c)
 
 
-def url_request_resp(api, items, page, data):
+def url_request_resp(api, items, page, data, logger):
     url = r"http://47.75.133.250/api/Values/%s/%d/%d" % (api, items, page)
-    print(url)
-    # logger.info("login_info url地址：%s" % url_login_info)
-    resp = requests.get(url, params=data, timeout=(50, 100)).json()
+
+    logger.info("login_info url地址：%s" % url)
+    try:
+        resp = requests.get(url, params=data, timeout=(50, 100)).json()
+
+    except():
+        logger.error("get url data error")
+        return ''
     # html_json = requests.get(url_login_info, timeout=(5, 10)).json()
     try:
         lines = resp.get('rows')
+        if lines:
+            return lines
+        else:
+            logger.error("get json data error")
+
+            ex = resp.get("ExceptionType")
+            if ex:
+                logger.error("system error as %s and with api %s" % (ex, api))
+
+            return ''
     except Exception as e:
-        print("get data error")
         lines = ''
+        logger.error("get json data error")
         return lines
-    return lines
 
 
-def get_login_his():
+def get_login_his(logger):
     startTime = endTime = date.today() - timedelta(days=1)
     page = 1
     payload = {'orderBy': '-id', 'startTime': startTime, 'endTime': endTime}
@@ -50,9 +65,9 @@ def get_login_his():
     print(api)
 
     while True:
-        lines = url_request_resp(api, items, page, payload)
+        lines = url_request_resp(api, items, page, payload, logger)
         page = page + 1
-        if len(lines) == 0:
+        if len(lines) == 0 or lines == '':
             break
 
         param = []
@@ -79,7 +94,7 @@ def get_login_his():
     return True
 
 
-def get_login_last():
+def get_login_last(logger):
     startData = endDate = date.today()
     ref_time = (datetime.datetime.now()-datetime.timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%S')
     page = 1
@@ -112,8 +127,8 @@ def get_login_last():
             warned_accounts.append(item.account)
 
     while True:
-        lines = url_request_resp(api, items, page, payload)
-        if len(lines) == 0:
+        lines = url_request_resp(api, items, page, payload, logger)
+        if len(lines) == 0 or lines == '':
             break
         page = page + 1
 
@@ -206,7 +221,7 @@ def clear_warning_form():
     return 'delete'
 
 
-def add_userinfo():
+def add_userinfo(logger):
     btime = date.today() - timedelta(days=7)
     etime = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     page = 1
@@ -216,7 +231,7 @@ def add_userinfo():
     print(api)
 
     while True:
-        lines = url_request_resp(api, items, page, payload)
+        lines = url_request_resp(api, items, page, payload, logger)
         page = page + 1
         if len(lines) == 0 or lines == '':
             break
@@ -250,7 +265,7 @@ def add_userinfo():
             user.is_trade_company = index.get('IsTradeCompany')
             user.is_office = index.get('IsOffice')
 
-            words_list = get_city(index.get('Address'))
+            words_list = user_city_cut(index.get('Address'))
 
             province = words_list[0]
             city_detail = words_list[1]
@@ -263,7 +278,7 @@ def add_userinfo():
     return 'success'
 
 
-def add_mt4list():
+def add_mt4list(logger):
     btime = date.today() - timedelta(days=7)
     etime = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     page = 1
@@ -273,7 +288,7 @@ def add_mt4list():
     print(api)
 
     while True:
-        lines = url_request_resp(api, items, page, payload)
+        lines = url_request_resp(api, items, page, payload, logger)
         page = page + 1
         if len(lines) == 0 or lines == '':
             break
@@ -322,33 +337,42 @@ def add_mt4list():
 
 
 # 通过账号获取该时间段内的订单记录
-def get_mt4order():
+def get_mt4order(filelogger):
     etime = datetime.datetime.now().strftime("%Y-%m-%dT%H:00:00")
-    btime = (datetime.datetime.now() - datetime.timedelta(hours=10)).strftime("%Y-%m-%dT%H:00:00")
+    btime = (datetime.datetime.now() - datetime.timedelta(hours=9)).strftime("%Y-%m-%dT%H:00:00")
     page = 1
     payload = {'BeginTime': btime, 'EndTime': etime}
-    api = 'GetMt4List'
+    api = 'GetMt4Order'
     items = 100
     print(api)
+    filelogger.info(api)
 
     while True:
-        lines = url_request_resp(api, items, page, payload)
+        lines = url_request_resp(api, items, page, payload, filelogger)
         page = page + 1
         if len(lines) == 0 or lines == '':
             break
 
-        para = []
         for index in lines:
+            # 查看是否已经有记录
+            order = index.get('Mt4Order')
+            had_order = Mt4order.query.filter_by(mt4_order=order).first()
+
+            if had_order:
+                continue
+
             # 如果有balance交易则更新出入金
             if index.get('Cmd') == "Balance":
                 mt4list = Mt4List.query.filter_by(account=index.get('Account')).first()
-                mt4list.in_money = index.get("InMoney")
-                mt4list.out_money = index.get("OutMoney")
-                mt4list.balance = index.get("Balance")
-                mt4list.equity = index.get("Equity")
-                mt4list.profit = index.get("Profit")
-                mt4list.trade_fee = index.get("TradeFee")
-                mt4list.save()
+                info = url_request_resp(api='GetMt4List', items=1, page=1, data={"Account": index.get('Account')})
+                for item in info:
+                    mt4list.in_money = item.get("InMoney")
+                    mt4list.out_money = item.get("OutMoney")
+                    mt4list.balance = item.get("Balance")
+                    mt4list.equity = item.get("Equity")
+                    mt4list.profit = item.get("Profit")
+                    mt4list.trade_fee = item.get("TradeFee")
+                    mt4list.save()
 
             for i in index.keys():
                 if index[i] is None:
@@ -357,18 +381,25 @@ def get_mt4order():
                     if i in ['OpenTime', 'CloseTime']:
                         index[i] = index[i].replace('T', ' ')
 
-            param = (
-                    index['Mt4Order'],
-                    index['Account'], index['Cmd'], index['Symbol'], index['OpenPrice'], index['ClosePrice'],
-                    index['Profit'], index['Volume'], index['OpenTime'], index['CloseTime'], index['ServerID'],
-                    index['UserID'], index['TrustInMoney'], index['NightInterest'], index['SL'],
-                    index['TP'], index['Commission'])
-            params = "(%d,%d,'%s','%s',%f,%f,%f,%f,'%s','%s',%d,%d,%f,%f,%f,%f,'%s')" % param
-            para.append(params)
+            mt4Order = Mt4order()
+            mt4Order.account = index.get("Account")
+            mt4Order.mt4_order = order
+            mt4Order.cmd = index.get("Cmd")
+            mt4Order.symbol = index.get("Symbol")
+            mt4Order.open_price = index.get("OpenPrice")
+            mt4Order.close_price = index.get("ClosePrice")
+            mt4Order.profit = index.get("Profit")
+            mt4Order.volume = index.get("Volume")
+            mt4Order.open_time = index.get("OpenTime")
+            mt4Order.close_time = index.get("CloseTime")
+            mt4Order.server_id = index.get("ServerID")
+            mt4Order.userId = index.get("UserID")
+            mt4Order.trust_in_money = index.get("TrustInMoney")
+            mt4Order.night_interest = index.get("NightInterest")
+            mt4Order.sl = index.get("SL")
+            mt4Order.tp = index.get("TP")
+            mt4Order.commission = index.get("Commission")
 
-        paras = ",".join(para)
-        # print(paras)
-        sql = "insert ignore into mt4order (mt4_order,account,cmd,symbol,open_price,close_price,profit,volume," \
-              "open_time,close_time,server_id,user_id,trust_in_money,night_interest,sl,tp,commission) values %s " % paras
-
+            mt4Order.save()
+    return 'success'
 

@@ -1,10 +1,8 @@
-from flask import current_app
 from flask_migrate import MigrateCommand, Migrate
 from flask_script import Manager
 import os
 
 from WestffsSchedules import create_app
-
 
 # os.environ['FLASK_ENV'] = 'develop'
 

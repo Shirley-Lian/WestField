@@ -5,6 +5,7 @@
 # 文件名称  : __init__.py.py
 # 开发工具  : PyCharm
 # 项目名称  : aspschedule
+
 from flask import Flask
 
 from WestffsSchedules.apis import init_api
@@ -29,5 +30,6 @@ def create_app(env):
 
     init_ext(app=app)
     # init_mail(app=app)
+
 
     return app

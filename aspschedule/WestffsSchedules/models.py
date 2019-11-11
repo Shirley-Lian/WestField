@@ -5,6 +5,7 @@
 # 文件名称  : models.py
 # 开发工具  : PyCharm
 # 项目名称  : aspschedule
+
 from WestffsSchedules.ext import db
 
 
@@ -126,22 +127,26 @@ class Mt4order(BaseModel):
     __tablename__ = 'mt4order'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    mt4_order = db.Column(db.Integer, nullable=False, name='mt4_order')
     account = db.Column(db.Integer, nullable=False, name='account')
-    user_id = db.Column(db.Integer, nullable=False, name='user_id')
-    name = db.Column(db.String(64), nullable=False, name='mt4_name')
-    server_id = db.Column(db.Integer, nullable=False, name='server_id')
-    in_money = db.Column(db.Float, nullable=False, name='in_money')
-    out_money = db.Column(db.Float, nullable=False, name='out_money')
-    balance = db.Column(db.Float, nullable=False, name='balance')
-    margin = db.Column(db.Float, nullable=False, name='margin')
-    equity = db.Column(db.Float, nullable=False, name='equity')
+    cmd = db.Column(db.String(64), nullable=False, name='cmd')
+    symbol = db.Column(db.String(64), nullable=False, name='symbol')
+    open_price = db.Column(db.Float, nullable=False, name='open_price')
+    close_price = db.Column(db.Float, nullable=False, name='close_price')
     profit = db.Column(db.Float, nullable=False, name='profit')
-    group_name = db.Column(db.String(64), nullable=False)
-    leverage = db.Column(db.Integer, nullable=False, name='leverage')
-    trade_fee = db.Column(db.Float, nullable=False, name='trade_fee')
-    create_time = db.Column(db.DateTime, nullable=False)
-    status = db.Column(db.Integer, nullable=False, name='status')
-    is_real = db.Column(db.Integer, nullable=False, name='is_real')
-    credit = db.Column(db.Float, nullable=False, name='credit', default=0)
-
+    volume = db.Column(db.Float, nullable=False, name='volume')
+    open_time = db.Column(db.String(64), nullable=False, name='open_time')
+    close_time = db.Column(db.String(64), nullable=False, name='close_time')
+    server_id = db.Column(db.Integer, nullable=False, name='server_id')
+    userId = db.Column(db.Integer, nullable=False, name='user_id')
+    trust_in_money = db.Column(db.Float, nullable=False, name='trust_in_money')
+    night_interest = db.Column(db.Float, nullable=False, name='night_interest')
+    sl = db.Column(db.Float, nullable=False, name='sl')
+    tp = db.Column(db.Float, nullable=False, name='tp')
+    commission = db.Column(db.String(64), nullable=False)
+    balance = db.Column(db.Float, name='balance', default=0)
+    profit_point = db.Column(db.Integer, name='profit_point', default=0)
+    hold_time = db.Column(db.Integer, name='hold_time', default=0)
+    sl_point = db.Column(db.Integer, name='sl_point', default=0)
+    tp_point = db.Column(db.Integer, name='tp_point', default=0)
 

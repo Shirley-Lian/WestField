@@ -16,6 +16,9 @@ def city_cut(citys):
             if i == "新疆伊犁哈萨克自治州":
                 seg_list = ['新疆维吾尔自治区', '伊犁哈萨克自治州']
                 break
+            if i == "新疆巴音郭楞蒙古自治州":
+                seg_list = ['新疆维吾尔自治区', '巴音郭楞蒙古自治州']
+                break
             if '内蒙古' in i:
                 index = seg_list.index(i)
                 seg_list[index] = '内蒙古自治区'
@@ -121,48 +124,51 @@ def get_city(citys):
 
 
 def user_city_cut(citys):
-    province = {'北京': '北京市', '天津': '天津市', '上海': '上海市', '重庆': '重庆市',
-                '河北': '河北省', '山西': '山西省', '辽宁': '辽宁省', '吉林': '吉林省',
-                '黑龙江': '黑龙江省', '江苏': '江苏省', '浙江': '浙江省', '安徽': '安徽省',
-                '福建': '福建省', '江西': '江西省', '山东': '山东省', '河南': '河南省',
-                '湖北': '湖北省', '湖南': '湖南省', '广东': '广东省', '海南': '海南省',
-                '四川': '四川省', '贵州': '贵州省', '云南': '云南省',
-                '陕西': '陕西省', '甘肃': '甘肃省', '青海': '青海省', '台湾': '台湾省', '内蒙古': '内蒙古自治区', '广西': '广西壮族自治区', '西藏': '西藏自治区',
-                '宁夏': '宁夏回族自治区', '新疆': '新疆维吾尔自治区', '香港': '香港特别行政区', '澳门': '澳门特别行政区'}
-    keys = province.keys()
-    if '吉林长春' in citys:
-        seg_list = ['吉林省', '长春市']
-    elif '广西北海' in citys:
-        seg_list = ['广西壮族自治区', '北海市']
-    elif '新疆吐鲁番地区' in citys:
-        seg_list = ['新疆维吾尔自治区', '吐鲁番地区']
-    elif '新疆巴音郭楞蒙古自治州' in citys:
-        seg_list = ['新疆维吾尔自治区', '巴音郭楞蒙古自治州']
-    elif '湖南永州' in citys:
-        seg_list = ['湖南省', '永州市']
-    elif '湖南长沙市' in citys:
-        seg_list = ['湖南省', '长沙市']
-    elif '甘肃兰州' in citys:
-        seg_list = ['甘肃省', '兰州市']
-    elif '山西大同' in citys:
-        seg_list = ['山西省', '大同市']
-    elif '贵州铜仁地区' in citys:
-        seg_list = ['贵州省', '铜仁地区']
-    elif '辽宁抚顺' in citys:
-        seg_list = ['辽宁省', '抚顺市']
-    elif '新疆伊犁哈萨克自治州' in citys:
-        seg_list = ['新疆维吾尔自治区', '伊犁哈萨克自治州']
-    elif '浦东新区' in citys:
-        seg_list = ['上海市', '浦东新区']
+    if citys is None:
+        seg_list = ['', '']
     else:
-        seg_list = jieba.lcut(citys)
-        for i in seg_list:
-            # print(i)
-            if i in keys:
-                index = seg_list.index(i)
-                seg_list[index] = province.get(i)
-                if i in ['北京', '上海', '天津', '重庆']:
-                    seg_list[1] = seg_list[2]
+        province = {'北京': '北京市', '天津': '天津市', '上海': '上海市', '重庆': '重庆市',
+                    '河北': '河北省', '山西': '山西省', '辽宁': '辽宁省', '吉林': '吉林省',
+                    '黑龙江': '黑龙江省', '江苏': '江苏省', '浙江': '浙江省', '安徽': '安徽省',
+                    '福建': '福建省', '江西': '江西省', '山东': '山东省', '河南': '河南省',
+                    '湖北': '湖北省', '湖南': '湖南省', '广东': '广东省', '海南': '海南省',
+                    '四川': '四川省', '贵州': '贵州省', '云南': '云南省',
+                    '陕西': '陕西省', '甘肃': '甘肃省', '青海': '青海省', '台湾': '台湾省', '内蒙古': '内蒙古自治区', '广西': '广西壮族自治区', '西藏': '西藏自治区',
+                    '宁夏': '宁夏回族自治区', '新疆': '新疆维吾尔自治区', '香港': '香港特别行政区', '澳门': '澳门特别行政区'}
+        keys = province.keys()
+        if '吉林长春' in citys:
+            seg_list = ['吉林省', '长春市']
+        elif '广西北海' in citys:
+            seg_list = ['广西壮族自治区', '北海市']
+        elif '新疆吐鲁番地区' in citys:
+            seg_list = ['新疆维吾尔自治区', '吐鲁番地区']
+        elif '新疆巴音郭楞蒙古自治州' in citys:
+            seg_list = ['新疆维吾尔自治区', '巴音郭楞蒙古自治州']
+        elif '湖南永州' in citys:
+            seg_list = ['湖南省', '永州市']
+        elif '湖南长沙市' in citys:
+            seg_list = ['湖南省', '长沙市']
+        elif '甘肃兰州' in citys:
+            seg_list = ['甘肃省', '兰州市']
+        elif '山西大同' in citys:
+            seg_list = ['山西省', '大同市']
+        elif '贵州铜仁地区' in citys:
+            seg_list = ['贵州省', '铜仁地区']
+        elif '辽宁抚顺' in citys:
+            seg_list = ['辽宁省', '抚顺市']
+        elif '新疆伊犁哈萨克自治州' in citys:
+            seg_list = ['新疆维吾尔自治区', '伊犁哈萨克自治州']
+        elif '浦东新区' in citys:
+            seg_list = ['上海市', '浦东新区']
+        else:
+            seg_list = jieba.lcut(citys)
+            for i in seg_list:
+                # print(i)
+                if i in keys:
+                    index = seg_list.index(i)
+                    seg_list[index] = province.get(i)
+                    if i in ['北京', '上海', '天津', '重庆']:
+                        seg_list[1] = seg_list[2]
 
     return seg_list
 
