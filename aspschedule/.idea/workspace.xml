@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b8fd3d39-5a8e-4c04-a7d5-0e30b54c63c4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WestffsSchedules/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WestffsSchedules/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/utils/city_cut.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/utils/city_cut.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,22 +29,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WestffsSchedules/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-              <folding>
-                <element signature="e#155#178#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/logger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="72" column="38" lean-forward="true" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
+            <state relative-caret-position="264">
+              <caret line="88" column="41" lean-forward="true" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
               <folding>
                 <element signature="e#147#161#0" expanded="true" />
               </folding>
@@ -59,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1081">
-              <caret line="332" lean-forward="true" selection-start-line="332" selection-end-line="332" />
+            <state relative-caret-position="441">
+              <caret line="366" column="60" lean-forward="true" selection-start-line="366" selection-start-column="60" selection-end-line="366" selection-end-column="60" />
               <folding>
                 <element signature="e#146#161#0" expanded="true" />
               </folding>
@@ -71,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="122" column="32" lean-forward="true" selection-start-line="122" selection-start-column="32" selection-end-line="122" selection-end-column="32" />
+            <state relative-caret-position="3129">
+              <caret line="152" column="12" selection-start-line="120" selection-start-column="10" selection-end-line="152" selection-end-column="12" />
               <folding>
                 <element signature="e#303#312#0" expanded="true" />
               </folding>
@@ -83,11 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-              <folding>
-                <element signature="e#1#50#0" expanded="true" />
-              </folding>
+            <state>
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -108,6 +89,7 @@
       <find>sql</find>
       <find>stack</find>
       <find>info</find>
+      <find>engine</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,15 +116,15 @@
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/__init__.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/settings.py" />
-        <option value="$PROJECT_DIR$/WestffsSchedules/tasks.py" />
         <option value="$PROJECT_DIR$/WestffsSchedules/logger.py" />
+        <option value="$PROJECT_DIR$/WestffsSchedules/tasks.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="249" />
-    <option name="y" value="8" />
-    <option name="width" value="1472" />
+    <option name="x" value="124" />
+    <option name="y" value="65" />
+    <option name="width" value="1720" />
     <option name="height" value="975" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -153,6 +135,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,7 +157,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,12 +248,13 @@
       <workItem from="1572483792658" duration="4910000" />
       <workItem from="1572494327890" duration="81951000" />
       <workItem from="1573121985942" duration="40000" />
-      <workItem from="1573196055419" duration="21878000" />
+      <workItem from="1573196055419" duration="30594000" />
+      <workItem from="1573549190665" duration="1435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160897000" />
+    <option name="totallyTimeSpent" value="171048000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -283,10 +266,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="593" y="0" width="1472" height="975" extended-state="0" />
+    <frame x="124" y="65" width="1720" height="975" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.12842105" visible="true" weight="0.18696883" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.12842105" visible="true" weight="0.23313253" />
       <window_info id="Structure" order="1" sideWeight="0.87157893" side_tool="true" weight="0.14313346" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -300,7 +283,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3290398" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23662306" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.23662306" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32971016" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -316,20 +299,6 @@
     <SUITE FILE_PATH="coverage/aspschedule$test.coverage" NAME="test Coverage Results" MODIFIED="1572860820130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/crud.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14973">
-          <caret line="718" selection-start-line="718" selection-end-line="718" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/sql/elements.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/envs/westffs/Lib/site-packages/sqlalchemy/engine/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -497,20 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nginx.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uwsgi.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/apis/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -559,55 +514,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://E:/envs/westffs/Lib/abc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1536">
-          <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python/Lib/typing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3607">
-          <caret line="1189" column="4" selection-start-line="1189" selection-start-column="4" selection-end-line="1189" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Program Files/python/Lib/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-858">
           <caret line="155" column="8" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/envs/westffs/Lib/_collections_abc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="373" column="30" selection-start-line="373" selection-start-column="30" selection-end-line="373" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/envs/westffs/Lib/weakref.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="89" column="40" selection-start-line="89" selection-start-column="40" selection-end-line="89" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Program Files/python/Lib/logging/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="723" column="14" lean-forward="true" selection-start-line="723" selection-start-column="14" selection-end-line="723" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding>
-            <element signature="e#1#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -642,56 +552,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Westfield_logging.log">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Westfield_logging.log" />
+    <entry file="file://$PROJECT_DIR$/uwsgi.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/2019-11-08.log">
+    <entry file="file://$PROJECT_DIR$/nginx.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-11-12.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/2019-11-11.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/logs/2019-11-08.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://E:/envs/westffs/Lib/abc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2331">
+          <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/envs/westffs/Lib/_collections_abc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="358" column="25" selection-start-line="358" selection-start-column="25" selection-end-line="358" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python/Lib/typing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1819">
+          <caret line="1189" column="4" selection-start-line="1189" selection-start-column="4" selection-end-line="1189" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/envs/westffs/Lib/weakref.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-606">
+          <caret line="89" column="54" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Program Files/python/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="723" column="15" selection-start-line="723" selection-start-column="15" selection-end-line="723" selection-end-column="15" />
+          <folding>
+            <element signature="e#14608#21977#0" />
+            <element signature="e#22114#23120#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://D:/Program Files/python/Lib/logging/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="562" selection-start-line="562" selection-end-line="562" />
+        <state relative-caret-position="-2407">
+          <caret line="501" column="50" selection-start-line="501" selection-start-column="50" selection-end-line="501" selection-end-column="50" />
           <folding>
             <element signature="e#1282#1294#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="122" column="32" lean-forward="true" selection-start-line="122" selection-start-column="32" selection-end-line="122" selection-end-column="32" />
-          <folding>
-            <element signature="e#303#312#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/Westfield_logging.log.2019-11-12_14-57-16" />
     <entry file="file://$PROJECT_DIR$/logs/Westfield_logging.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="63">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/logger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="72" column="38" lean-forward="true" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
+        <state relative-caret-position="264">
+          <caret line="88" column="41" lean-forward="true" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
           <folding>
             <element signature="e#147#161#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WestffsSchedules/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3129">
+          <caret line="152" column="12" selection-start-line="120" selection-start-column="10" selection-end-line="152" selection-end-column="12" />
+          <folding>
+            <element signature="e#303#312#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1081">
-          <caret line="332" lean-forward="true" selection-start-line="332" selection-end-line="332" />
+        <state relative-caret-position="441">
+          <caret line="366" column="60" lean-forward="true" selection-start-line="366" selection-start-column="60" selection-end-line="366" selection-end-column="60" />
           <folding>
             <element signature="e#146#161#0" expanded="true" />
           </folding>

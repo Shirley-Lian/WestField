@@ -18,9 +18,6 @@ from WestffsSchedules.utils.city_cut import get_city, user_city_cut
 from WestffsSchedules.utils.mails import PySendMail
 
 
-engine = db.get_engine()
-
-
 def method_test(a, b, c):
     print(datetime.datetime.now())
     print('begin')
@@ -364,7 +361,7 @@ def get_mt4order(filelogger):
             # 如果有balance交易则更新出入金
             if index.get('Cmd') == "Balance":
                 mt4list = Mt4List.query.filter_by(account=index.get('Account')).first()
-                info = url_request_resp(api='GetMt4List', items=1, page=1, data={"Account": index.get('Account')})
+                info = url_request_resp(api='GetMt4List', items=1, page=1, data={"Account": index.get('Account')}, logger=filelogger)
                 for item in info:
                     mt4list.in_money = item.get("InMoney")
                     mt4list.out_money = item.get("OutMoney")

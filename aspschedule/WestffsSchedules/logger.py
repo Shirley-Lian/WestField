@@ -86,6 +86,7 @@ def schedule_logger():
                 # 既有 console Handler，还有 file Handler
                 'handlers': ['console', 'file'],
                 'level': 'DEBUG',
+                'suffix': "%Y-%m-%d.log",
             },
             # 其他的 Logger
         }
