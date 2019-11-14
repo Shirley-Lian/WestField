@@ -25,7 +25,7 @@ def method_test(a, b, c):
 
 
 def url_request_resp(api, items, page, data, logger):
-    url = r"http://47.75.133.250/api/Values/%s/%d/%d" % (api, items, page)
+    url = r"http://47.75.192.61/api/Values/%s/%d/%d" % (api, items, page)
 
     logger.info("login_info url地址：%s" % url)
     try:
