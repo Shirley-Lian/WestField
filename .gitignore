@@ -1,2 +1,4 @@
 **/settings.py
 *.log
+**/logs
+**/__pycache__
