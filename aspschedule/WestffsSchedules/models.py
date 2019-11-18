@@ -150,3 +150,11 @@ class Mt4order(BaseModel):
     sl_point = db.Column(db.Integer, name='sl_point', default=0)
     tp_point = db.Column(db.Integer, name='tp_point', default=0)
 
+
+class WhiteList(BaseModel):
+
+    __tablename__ = 'warning_white_list'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    account = db.Column(db.Integer, nullable=False, name='account')
+    group_name = db.Column(db.String(64), nullable=False)

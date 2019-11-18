@@ -14,7 +14,8 @@ import pandas as pd
 
 import datetime
 
-from WestffsSchedules.settings import Config
+from WestffsSchedules.settings import Config, logger
+from WestffsSchedules.utils.origin_db import warning_emails
 
 pd.set_option('display.max_colwidth', -1) # 设置表格数据完全显示（不出现省略号）
 
@@ -167,12 +168,13 @@ class PySendMail:
         self.server_smtp = Config.MAIL_SERVER # SMTP服务器地址
         self.server_port = Config.MAIL_PORT
 
-    def mail(self, df_html, user, warning_type, title):
+    def mail(self, df_html, warning_type, title):
         ret = True
         body = self.body.format(titles=title, yesterday=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), df_html=df_html)
         html_msg = "<html>" + self.head + body + "</html>"
         html_msg = html_msg.replace('\n', '').encode("utf-8")
-        my_user = user  # 收件人邮箱账号，我这边发送给自己
+        my_user = warning_emails(logger)  # 收件人邮箱账号，我这边发送给自己
+        print(my_user)
         # try:
         msg = MIMEText(html_msg, 'html', 'utf-8')
         msg['From'] = formataddr(["QuantFintech", self.my_sender])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
@@ -189,20 +191,3 @@ class PySendMail:
         #     ret = False
         #     print(e)
         return ret
-#
-# # 获取数据
-# filter_merge_data = ''
-# df_html = filter_merge_data.to_html(escape=False) #DataFrame数据转化为HTML表格形式
-#
-# # warn_type = "订单预警"
-# title = "注册地址与登陆地址不相符"
-# warn_type = "异地登陆预警"
-# # mailadd = "zhangh0725@gmail.com"
-# # mailadd = "lianxiaorui0511@163.com"
-# mailadd = "dofuy007@gmail.com"
-# sendmail = PySendMail()
-# ret = sendmail.mail(df_html, mailadd, warn_type, title)
-# if ret:
-#     print("邮件发送成功")
-# else:
-#     print("邮件发送失败")
