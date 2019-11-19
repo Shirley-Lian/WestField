@@ -503,7 +503,7 @@ def get_trade_order(filelogger):
         db.session.commit()
 
     # 插入持仓单
-    Sql = "replace into TradeOrder(`order`,account,symbol,digits,cmd,volume,open_time,state,open_price,sl,tp," \
+    Sql = "replace into tradeorder(`order`,account,symbol,digits,cmd,volume,open_time,state,open_price,sl,tp," \
           "close_time,expiration,reason,commission,commission_agent,storage,close_price,profit,taxes,magic,comment," \
           "activation,margin_rate,timestamp) values %s" % params
 
@@ -563,7 +563,7 @@ def add_equity_hour(logger):
             break
 
         for index in lines:
-            if index.get("Equity") != 0:
+            if index.get("Equity") != 0 and index.get("InMoney") > 0:
                 hour_equity = EquityHours()
                 hour_equity.account = index.get('_Account')
                 hour_equity.date = date
