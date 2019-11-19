@@ -2,13 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8fd3d39-5a8e-4c04-a7d5-0e30b54c63c4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WestffsSchedules/utils/origin_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/logger.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WestffsSchedules/utils/mails.py" beforeDir="false" afterPath="$PROJECT_DIR$/WestffsSchedules/utils/mails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uwsgi.ini" beforeDir="false" afterPath="$PROJECT_DIR$/uwsgi.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../--ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/WestField.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/--ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aspschedule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/apis/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/apis/warning_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/ext.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/tasks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/utils/city_cut.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/utils/mails.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/utils/origin_db.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/views/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WestffsSchedules/views/orders.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/63ab5536a804_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uwsgi.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readme1.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,19 +87,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/utils/origin_db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="567">
               <caret line="30" selection-start-line="30" selection-end-line="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WestffsSchedules/utils/mails.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="241">
               <caret line="173" column="41" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
               <folding>
                 <element signature="e#164#178#0" expanded="true" />
@@ -310,12 +341,12 @@
       <workItem from="1573196055419" duration="30594000" />
       <workItem from="1573549190665" duration="3362000" />
       <workItem from="1573705861452" duration="870000" />
-      <workItem from="1573807128586" duration="17308000" />
+      <workItem from="1573807128586" duration="17744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191153000" />
+    <option name="totallyTimeSpent" value="191589000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -330,7 +361,7 @@
     <frame x="194" y="50" width="1624" height="894" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.12842105" visible="true" weight="0.2538363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.12842105" visible="true" weight="0.2685422" />
       <window_info id="Structure" order="1" sideWeight="0.87157893" side_tool="true" weight="0.14313346" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -665,16 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WestffsSchedules/utils/mails.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="173" column="41" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
-          <folding>
-            <element signature="e#164#178#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uwsgi.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -709,8 +730,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WestffsSchedules/utils/origin_db.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="567">
           <caret line="30" selection-start-line="30" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WestffsSchedules/utils/mails.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="173" column="41" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
+          <folding>
+            <element signature="e#164#178#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
