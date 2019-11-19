@@ -445,8 +445,10 @@ def get_trade_order(filelogger):
         'warning_lots_symbol': warning_lots_symbol,
         'warning_lots_lots': warning_lots_lots,
     }
+    stime = int(time.time())
     lines = url_request_resp(api, items, page, payload, filelogger)
     nowtime = int(time.time())
+    filelogger.info("trade download time is %d" % (nowtime-stime))
     for index in lines:
 
         if nowtime - index.get('OpenTime') < 15:
@@ -459,7 +461,7 @@ def get_trade_order(filelogger):
                     warning_index_lots.append(index.get('Volume')/100)
 
             if index.get('Volume') >= 500:
-                filelogger.info(index.get('Order'), index.get('Volume'))
+                print(index.get('Login'))
                 check_white_act = WhiteList.query.filter_by(account=index.get('Login')).first()
                 if not check_white_act:
                     warning_lots_order.append(index.get('Order'))
