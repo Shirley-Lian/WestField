@@ -158,3 +158,16 @@ class WhiteList(BaseModel):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     account = db.Column(db.Integer, nullable=False, name='account')
     group_name = db.Column(db.String(64), nullable=False)
+
+
+class EquityHours(BaseModel):
+
+    __tablename__ = 'equity_2019_hour'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    account = db.Column(db.Integer, nullable=False, name='account')
+    date = db.Column(db.DateTime, nullable=False)
+    in_money = db.Column(db.Float, nullable=False, name='in_money')
+    out_money = db.Column(db.Float, nullable=False, name='out_money')
+    balance = db.Column(db.Float, nullable=False, name='balance')
+    equity = db.Column(db.Float, nullable=False, name='equity')

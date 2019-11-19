@@ -13,7 +13,7 @@ import pandas as pd
 import requests
 
 from WestffsSchedules.ext import db
-from WestffsSchedules.models import LoginInfo, Mt4List, UserInfo, WarningLoginInfo, Mt4order, WhiteList
+from WestffsSchedules.models import LoginInfo, Mt4List, UserInfo, WarningLoginInfo, Mt4order, WhiteList, EquityHours
 
 from WestffsSchedules.utils.city_cut import get_city, user_city_cut
 from WestffsSchedules.utils.mails import PySendMail
@@ -547,3 +547,30 @@ def get_trade_order(filelogger):
             filelogger.error("邮件发送失败, api %s" % warn_type)
 
     return
+
+
+def add_equity_hour(logger):
+    page = 1
+    payload = {}
+    api = 'GetMt4List'
+    items = 100
+    date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    while True:
+        lines = url_request_resp(api, items, page, payload, logger)
+        page = page + 1
+        if len(lines) == 0 or lines == '':
+            break
+
+        for index in lines:
+            if index.get("Equity") != 0:
+                hour_equity = EquityHours()
+                hour_equity.account = index.get('_Account')
+                hour_equity.date = date
+                hour_equity.in_money = index.get("InMoney")
+                hour_equity.out_money = index.get("OutMoney")
+                hour_equity.balance = index.get("Balance")
+                hour_equity.equity = index.get("Equity")
+                hour_equity.save()
+
+    return 'success'
