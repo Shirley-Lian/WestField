@@ -446,9 +446,10 @@ def get_trade_order(filelogger):
         'warning_lots_lots': warning_lots_lots,
     }
     lines = url_request_resp(api, items, page, payload, filelogger)
-
+    nowtime = int(time.time())
     for index in lines:
-        if int(time.time()) - index.get('OpenTime') < 10:
+
+        if nowtime - index.get('OpenTime') < 15:
             if index.get("Symbol") in index_trade:
                 check_white_act = WhiteList.query.filter_by(account=index.get('Login')).first()
                 if not check_white_act:
@@ -458,6 +459,7 @@ def get_trade_order(filelogger):
                     warning_index_lots.append(index.get('Volume')/100)
 
             if index.get('Volume') >= 500:
+                filelogger.info(index.get('Order'), index.get('Volume'))
                 check_white_act = WhiteList.query.filter_by(account=index.get('Login')).first()
                 if not check_white_act:
                     warning_lots_order.append(index.get('Order'))
@@ -520,9 +522,6 @@ def get_trade_order(filelogger):
         title = u"进行指数交易订单"
         warn_type = u"指数订单预警"
 
-        # mailadd = ["lianxiaorui0511@163.com", "notificationenquirywf@gmail.com"]
-
-        # mailadd = "dofuy007@gmail.com"
         sendmail = PySendMail()
         ret = sendmail.mail(df_html, warn_type, title)
         if ret:
@@ -531,6 +530,7 @@ def get_trade_order(filelogger):
             filelogger.error("邮件发送失败, api %s" % warn_type)
 
     if len(warning_lots_order) != 0:
+        filelogger.info(warning_lots)
         frame = pd.DataFrame(warning_lots)
         df_html = frame.to_html(escape=False)
 
